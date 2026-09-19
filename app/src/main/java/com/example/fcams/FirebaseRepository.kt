@@ -35,4 +35,36 @@ class FirebaseRepository {
                 onRoleFetched(null)
             }
     }
+
+    fun getRooms(onRoomsFetched: (List<Room>) -> Unit) {
+        db.collection("rooms")
+            .get()
+            .addOnSuccessListener { result ->
+                val roomList = result.toObjects(Room::class.java)
+                onRoomsFetched(roomList)
+            }
+            .addOnFailureListener {
+                onRoomsFetched(emptyList())
+            }
+    }
+
+    fun bookRoom(roomID: String, userId: String, timeDate: String, onResult: (Boolean, String?) -> Unit) {
+        val bookingId = db.collection("room_bookings").document().id
+        val booking = RoomBooking(
+            bookingID = bookingId,
+            roomID = roomID,
+            userId = userId,
+            timeDate = timeDate,
+            status = "Pending"
+        )
+
+        db.collection("room_bookings").document(bookingId)
+            .set(booking)
+            .addOnSuccessListener {
+                onResult(true, null)
+            }
+            .addOnFailureListener { e ->
+                onResult(false, e.localizedMessage)
+            }
+    }
 }
