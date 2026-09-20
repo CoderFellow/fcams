@@ -48,29 +48,40 @@ class FirebaseRepository {
             }
     }
 
-    fun bookRoom(roomID: String, userId: String, timeDate: String, onResult: (Boolean, String?) -> Unit) {
-        val bookingId = db.collection("room_bookings").document().id
-        val booking = RoomBooking(
-            bookingID = bookingId,
-            roomID = roomID,
-            userId = userId,
-            timeDate = timeDate,
-            status = "Pending"
-        )
-
-        db.collection("room_bookings").document(bookingId)
-            .set(booking)
-            .addOnSuccessListener {
-                onResult(true, null)
+    fun bookRoom(roomID: String, userId: String, timeDate: String, onResult: (Boolean, String) -> Unit) {
+        // 1. Check for conflicts first
+        checkBookingConflict(roomID, timeDate) { hasConflict ->
+            if (hasConflict) {
+                onResult(false, "This room is already booked for this date and time!")
+            } else {
+                // 2. Create the booking object
+                val bookingID = db.collection("roomBookings").document().id
+                val newBooking = RoomBooking(
+                    bookingID = bookingID,
+                    roomID = roomID,
+                    userId = userId,
+                    timeDate = timeDate,
+                    status = "Pending"
+                )
+    
+                // 3. Save to Firestore
+                db.collection("roomBookings")
+                    .document(bookingID)
+                    .set(newBooking)
+                    .addOnSuccessListener {
+                        onResult(true, "Room successfully booked!")
+                    }
+                    .addOnFailureListener { e ->
+                        onResult(false, "Failed to book: ${e.localizedMessage}")
+                    }
             }
-            .addOnFailureListener { e ->
-                onResult(false, e.localizedMessage)
-            }
+        }
     }
 
     fun checkBookingConflict(roomID: String, selectedDateTime: String, onResult: (Boolean) -> Unit) {
         /*
-        Queries active bookings for a specific room and checks if the chosen slot overlaps.
+        queries active bookings for a specific room and checks if the chosen slot overlaps
+        
         */
     db.collection("roomBookings")
         .whereEqualTo("roomID", roomID)
