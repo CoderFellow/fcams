@@ -54,16 +54,12 @@ class StudentDashboardActivity : ComponentActivity() {
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(vertical = 8.dp)
-                            .clickable {
-                                val targetTime = "2026-09-20 10:00 AM"
-                                firebaseRepo.bookRoom(room.roomID, currentUserEmail, targetTime) { success, error ->
-                                    if (success) {
-                                        Toast.makeText(context, "Booked ${room.roomName}!", Toast.LENGTH_SHORT).show()
-                                    } else {
-                                        Toast.makeText(context, "Error: $error", Toast.LENGTH_SHORT).show()
-                                    }
-                                }
-                            },
+                        .clickable {
+                            val intent = Intent(context, SetBookingActivity::class.java).apply {
+                                putExtra("ROOM_ID", room.roomID)
+                            }
+                            context.startActivity(intent)
+                        },
                         elevation = CardDefaults.cardElevation(4.dp)
                     ) {
                         Column(modifier = Modifier.padding(16.dp)) {
