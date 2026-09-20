@@ -1,5 +1,6 @@
 package com.example.fcams
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
@@ -54,12 +55,12 @@ class StudentDashboardActivity : ComponentActivity() {
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(vertical = 8.dp)
-                        .clickable {
-                            val intent = Intent(context, SetBookingActivity::class.java).apply {
-                                putExtra("ROOM_ID", room.roomID)
-                            }
-                            context.startActivity(intent)
-                        },
+                            .clickable {
+                                val intent = Intent(context, SetBookingActivity::class.java).apply {
+                                    putExtra("ROOM_ID", room.roomID)
+                                }
+                                context.startActivity(intent)
+                            },
                         elevation = CardDefaults.cardElevation(4.dp)
                     ) {
                         Column(modifier = Modifier.padding(16.dp)) {

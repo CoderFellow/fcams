@@ -23,6 +23,11 @@
                 android:name=".StudentDashboardActivity"
                 android:exported="false" />
 
+        <!-- ADD THIS LINE BELOW -->
+        <activity
+                android:name=".SetBookingActivity"
+                android:exported="false" />
+
     </application>
 
 </manifest>
