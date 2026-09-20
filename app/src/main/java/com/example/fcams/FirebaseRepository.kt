@@ -67,4 +67,23 @@ class FirebaseRepository {
                 onResult(false, e.localizedMessage)
             }
     }
+
+    fun checkBookingConflict(roomID: String, selectedDateTime: String, onResult: (Boolean) -> Unit) {
+        /*
+        Queries active bookings for a specific room and checks if the chosen slot overlaps.
+        */
+    db.collection("roomBookings")
+        .whereEqualTo("roomID", roomID)
+        .whereEqualTo("timeDate", selectedDateTime)
+        .get()
+        .addOnSuccessListener { documents ->
+            // If documents.isEmpty() is true, no conflict exists!
+            val hasConflict = !documents.isEmpty
+            onResult(hasConflict)
+        }
+        .addOnFailureListener {
+            // Default to safe side or handle error
+            onResult(true) 
+        }
+    }
 }
