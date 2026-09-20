@@ -97,4 +97,17 @@ class FirebaseRepository {
             onResult(true) 
         }
     }
+
+    fun getBookingsForRoom(roomID: String, onResult: (List<RoomBooking>) -> Unit) {
+    db.collection("roomBookings")
+        .whereEqualTo("roomID", roomID)
+        .get()
+        .addOnSuccessListener { documents ->
+            val bookings = documents.toObjects(RoomBooking::class.java)
+            onResult(bookings)
+        }
+        .addOnFailureListener {
+            onResult(emptyList())
+        }
+}
 }
