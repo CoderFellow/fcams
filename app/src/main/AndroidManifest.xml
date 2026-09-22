@@ -32,6 +32,10 @@
             android:name=".RoomScheduleActivity"
             android:exported="false"/>
 
+        <activity
+            android:name=".LecturerDashboardActivity"
+            android:exported="false" />
+        
     </application>
 
 </manifest>

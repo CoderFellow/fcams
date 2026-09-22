@@ -45,7 +45,9 @@ class MainActivity : AppCompatActivity() {
                                 }
                                 "lecturer" -> {
                                     Toast.makeText(this, "Welcome Lecturer!", Toast.LENGTH_SHORT).show()
-                                    // TODO: Intent to LecturerDashboardActivity
+                                    val intent = Intent(this, LecturerDashboardActivity::class.java)
+                                    startActivity(intent)
+                                    finish()
                                 }
                                 else -> {
                                     Toast.makeText(this, "Role not found for this user", Toast.LENGTH_LONG).show()
