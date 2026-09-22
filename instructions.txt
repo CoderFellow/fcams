@@ -1,0 +1,10 @@
+git add . <--- to add all files to commit
+git add [filename.fileExtentions] [anyMoreFiles] <---- for individual files
+git commit -m "Your Comment Here!" <--- to commit changes to your local repository.
+git push <---- to push changes from your local repository to github remote.
+git log <---- to track the number of commits on you local machine
+
+----
+
+if you wish to ignore pushing somefiles, add them to .gitignore:
+
