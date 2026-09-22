@@ -82,14 +82,13 @@ class RoomScheduleActivity : AppCompatActivity() {
                     }
 
                     val myBookingStrings = myBookings.map { "Room: ${it.roomID} at ${it.timeDate}" }.toTypedArray()
-
+                    
                     runOnUiThread {
                         androidx.appcompat.app.AlertDialog.Builder(this)
-                            .setTitle("Request Room Swap")
-                            .setMessage("Target slot: ${targetBooking.timeDate}\nSelect one of your bookings to offer:")
+                            .setTitle("Request Room Swap\nTarget Slot: ${targetBooking.timeDate}\n\nSelect one of your bookings to offer:")
                             .setItems(myBookingStrings) { _, whichIndex ->
                                 val chosenMyBooking = myBookings[whichIndex]
-
+                    
                                 firebaseRepo.requestSwap(chosenMyBooking.bookingID, targetBooking.bookingID) { success, message ->
                                     Toast.makeText(this, message, Toast.LENGTH_LONG).show()
                                 }

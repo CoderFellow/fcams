@@ -178,26 +178,23 @@ class FirebaseRepository {
         }
     }
     
-fun getUserBookings(onResult: (List<RoomBooking>) -> Unit) {
-    db.collection("roomBookings")
-        .get()
-        .addOnSuccessListener { documents ->
-            try {
-                val allBookings = mutableListOf<RoomBooking>()
-                for (doc in documents) {
-                    val booking = doc.toObject(RoomBooking::class.java)
-                    allBookings.add(booking)
-                }
-                android.util.Log.d("FIREBASE_DEBUG", "Successfully parsed ${allBookings.size} bookings.")
+    fun getUserBookings(onResult: (List<RoomBooking>) -> Unit) {
+        val currentEmail = auth.currentUser?.email 
+        if (currentEmail == null) {
+            onResult(emptyList())
+            return
+        }
+    
+        db.collection("roomBookings")
+            .whereEqualTo("userId", currentEmail) // Match by email if that's what you saved
+            .get()
+            .addOnSuccessListener { documents ->
+                val allBookings = documents.toObjects(RoomBooking::class.java)
+                android.util.Log.d("FIREBASE_DEBUG", "Successfully parsed ${allBookings.size} bookings for user.")
                 onResult(allBookings)
-            } catch (e: Exception) {
-                android.util.Log.e("FIREBASE_DEBUG", "Parsing error: ${e.localizedMessage}")
+            }
+            .addOnFailureListener {
                 onResult(emptyList())
             }
-        }
-        .addOnFailureListener { e ->
-            android.util.Log.e("FIREBASE_DEBUG", "Firestore read failed: ${e.localizedMessage}")
-            onResult(emptyList())
-        }
-}
+    }
 }
