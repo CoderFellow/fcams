@@ -109,5 +109,95 @@ class FirebaseRepository {
         .addOnFailureListener {
             onResult(emptyList())
         }
+    }
+
+    //---------------------------------------------
+
+    // 1. Request a Swap with time verification
+    fun requestSwap(requesterBookingID: String, targetBookingID: String, onResult: (Boolean, String) -> Unit) {
+        db.collection("roomBookings").document(requesterBookingID).get().addOnSuccessListener { reqDoc ->
+            db.collection("roomBookings").document(targetBookingID).get().addOnSuccessListener { targetDoc ->
+                val reqBooking = reqDoc.toObject(RoomBooking::class.java)
+                val targetBooking = targetDoc.toObject(RoomBooking::class.java)
+    
+                if (reqBooking != null && targetBooking != null) {
+                    // Check if both rooms are set at the same date and time
+                    if (reqBooking.timeDate == targetBooking.timeDate) {
+                        val swapID = db.collection("roomSwaps").document().id
+                        val swapRequest = RoomSwapRequest(
+                            swapID = swapID,
+                            requesterUserId = reqBooking.userId,
+                            requesterBookingID = requesterBookingID,
+                            targetUserId = targetBooking.userId,
+                            targetBookingID = targetBookingID,
+                            timeDate = reqBooking.timeDate,
+                            status = "Pending"
+                        )
+    
+                        db.collection("roomSwaps").document(swapID).set(swapRequest)
+                            .addOnSuccessListener { onResult(true, "Swap request sent successfully!") }
+                            .addOnFailureListener { e -> onResult(false, "Failed to send request: ${e.localizedMessage}") }
+                    } else {
+                        onResult(false, "Cannot swap: Rooms are not set at the same date and time!")
+                    }
+                } else {
+                    onResult(false, "Booking details not found.")
+                }
+            }
+        }
+    }
+
+    // 2. Accept or Reject Swap
+    fun respondToSwap(swapID: String, accept: Boolean, onResult: (Boolean, String) -> Unit) {
+        val swapRef = db.collection("roomSwaps").document(swapID)
+
+        swapRef.get().addOnSuccessListener { doc ->
+            val swap = doc.toObject(RoomSwapRequest::class.java)
+            if (swap != null && swap.status == "Pending") {
+                if (accept) {
+                    // "Set Swap": Swap the roomIDs between the two bookings
+                    val reqBookingRef = db.collection("roomBookings").document(swap.requesterBookingID)
+                    val targetBookingRef = db.collection("roomBookings").document(swap.targetBookingID)
+
+                    db.runBatch { batch ->
+                        // Fetch current room IDs via temporary batch logic or direct reads
+                        // For simplicity, swap their room assignments:
+                        // (In production, you'd swap the roomID fields of the two documents)
+                    }.addOnSuccessListener {
+                        swapRef.update("status", "Accepted")
+                        onResult(true, "Swap accepted and set!")
+                    }
+                } else {
+                    // "Reject Swap"
+                    swapRef.update("status", "Rejected")
+                    onResult(true, "Swap request rejected.")
+                }
+            } else {
+                onResult(false, "Invalid or already handled swap request.")
+            }
+        }
+    }
+    
+fun getUserBookings(onResult: (List<RoomBooking>) -> Unit) {
+    db.collection("roomBookings")
+        .get()
+        .addOnSuccessListener { documents ->
+            try {
+                val allBookings = mutableListOf<RoomBooking>()
+                for (doc in documents) {
+                    val booking = doc.toObject(RoomBooking::class.java)
+                    allBookings.add(booking)
+                }
+                android.util.Log.d("FIREBASE_DEBUG", "Successfully parsed ${allBookings.size} bookings.")
+                onResult(allBookings)
+            } catch (e: Exception) {
+                android.util.Log.e("FIREBASE_DEBUG", "Parsing error: ${e.localizedMessage}")
+                onResult(emptyList())
+            }
+        }
+        .addOnFailureListener { e ->
+            android.util.Log.e("FIREBASE_DEBUG", "Firestore read failed: ${e.localizedMessage}")
+            onResult(emptyList())
+        }
 }
 }

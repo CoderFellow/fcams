@@ -35,6 +35,10 @@
         <activity
             android:name=".LecturerDashboardActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".RoomSwapRequest"
+            android:exported="false"/>
         
     </application>
 
