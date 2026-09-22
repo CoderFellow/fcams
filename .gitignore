@@ -1,0 +1,15 @@
+# Cache and build outputs (Crucial to ignore for speed)
+.gradle/
+build/
+app/build/
+
+# Local IDE configuration files (Do not share absolute folder paths)
+.idea/
+*.iml
+.vscode/
+
+# Local system pathways (Contains paths unique to YOUR machine)
+local.properties
+
+# Log files
+*.log

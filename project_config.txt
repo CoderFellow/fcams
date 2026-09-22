@@ -1,0 +1,2320 @@
+
+C:\Users\Kevin PALA\Desktop\mc216(1)\fcams>dir /s
+ Volume in drive C is Windows
+ Volume Serial Number is 7680-EE6F
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM                 0 .gitignore
+09/23/2026  01:51 AM    <DIR>          .gradle
+09/23/2026  01:51 AM    <DIR>          .idea
+09/23/2026  01:51 AM    <DIR>          app
+09/23/2026  01:51 AM               460 build.gradle.kts
+09/23/2026  01:51 AM    <DIR>          gradle
+09/23/2026  01:51 AM             1,368 gradle.properties
+09/23/2026  01:51 AM             8,902 gradlew
+09/23/2026  01:51 AM             2,896 gradlew.bat
+09/23/2026  01:51 AM               458 local.properties
+09/23/2026  01:51 AM                43 README.md
+09/23/2026  01:51 AM               552 settings.gradle.kts
+               8 File(s)         14,679 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\.git
+
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:52 AM               332 config
+09/23/2026  01:51 AM                73 description
+09/23/2026  01:51 AM                21 HEAD
+09/23/2026  01:51 AM    <DIR>          hooks
+09/23/2026  01:51 AM           119,027 index
+09/23/2026  01:51 AM    <DIR>          info
+09/23/2026  01:51 AM    <DIR>          logs
+09/23/2026  01:51 AM    <DIR>          objects
+09/23/2026  01:51 AM               112 packed-refs
+09/23/2026  01:51 AM    <DIR>          refs
+               5 File(s)        119,565 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\.git\hooks
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM               478 applypatch-msg.sample
+09/23/2026  01:51 AM             1,972 commit-msg.sample
+09/23/2026  01:51 AM             4,611 fsmonitor-watchman.sample
+09/23/2026  01:51 AM               189 post-update.sample
+09/23/2026  01:51 AM               424 pre-applypatch.sample
+09/23/2026  01:51 AM             1,649 pre-commit.sample
+09/23/2026  01:51 AM               416 pre-merge-commit.sample
+09/23/2026  01:51 AM             1,374 pre-push.sample
+09/23/2026  01:51 AM             4,898 pre-rebase.sample
+09/23/2026  01:51 AM               544 pre-receive.sample
+09/23/2026  01:51 AM             1,492 prepare-commit-msg.sample
+09/23/2026  01:51 AM             2,783 push-to-checkout.sample
+09/23/2026  01:51 AM             2,308 sendemail-validate.sample
+09/23/2026  01:51 AM             3,650 update.sample
+              14 File(s)         26,788 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\.git\info
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM               240 exclude
+               1 File(s)            240 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\.git\logs
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM               188 HEAD
+09/23/2026  01:51 AM    <DIR>          refs
+               1 File(s)            188 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\.git\logs\refs
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          heads
+09/23/2026  01:51 AM    <DIR>          remotes
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\.git\logs\refs\heads
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM               188 main
+               1 File(s)            188 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\.git\logs\refs\remotes
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          origin
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\.git\logs\refs\remotes\origin
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM               188 HEAD
+               1 File(s)            188 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\.git\objects
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          info
+09/23/2026  01:51 AM    <DIR>          pack
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\.git\objects\info
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\.git\objects\pack
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM            30,360 pack-1ec7c0fbffaac2bef5cd091f15a5c40d83684fa6.idx
+09/23/2026  01:51 AM        37,919,525 pack-1ec7c0fbffaac2bef5cd091f15a5c40d83684fa6.pack
+09/23/2026  01:51 AM             4,236 pack-1ec7c0fbffaac2bef5cd091f15a5c40d83684fa6.rev
+               3 File(s)     37,954,121 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\.git\refs
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          heads
+09/23/2026  01:51 AM    <DIR>          remotes
+09/23/2026  01:51 AM    <DIR>          tags
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\.git\refs\heads
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM                41 main
+               1 File(s)             41 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\.git\refs\remotes
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          origin
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\.git\refs\remotes\origin
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM                30 HEAD
+               1 File(s)             30 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\.git\refs\tags
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\.gradle
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          9.2.1
+09/23/2026  01:51 AM    <DIR>          9.4.1
+09/23/2026  01:51 AM    <DIR>          buildOutputCleanup
+09/23/2026  01:51 AM               102 config.properties
+09/23/2026  01:51 AM                 8 file-system.probe
+09/23/2026  01:51 AM    <DIR>          vcs-1
+               2 File(s)            110 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\.gradle\9.2.1
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          checksums
+09/23/2026  01:51 AM    <DIR>          executionHistory
+09/23/2026  01:51 AM    <DIR>          fileChanges
+09/23/2026  01:51 AM    <DIR>          fileHashes
+09/23/2026  01:51 AM                 0 gc.properties
+               1 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\.gradle\9.2.1\checksums
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM                17 checksums.lock
+09/23/2026  01:51 AM            30,997 md5-checksums.bin
+09/23/2026  01:51 AM            86,909 sha1-checksums.bin
+               3 File(s)        117,923 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\.gradle\9.2.1\executionHistory
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM         3,426,688 executionHistory.bin
+09/23/2026  01:51 AM                17 executionHistory.lock
+               2 File(s)      3,426,705 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\.gradle\9.2.1\fileChanges
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM                 1 last-build.bin
+               1 File(s)              1 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\.gradle\9.2.1\fileHashes
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM            85,115 fileHashes.bin
+09/23/2026  01:51 AM                17 fileHashes.lock
+09/23/2026  01:51 AM            19,143 resourceHashesCache.bin
+               3 File(s)        104,275 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\.gradle\9.4.1
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          checksums
+09/23/2026  01:51 AM    <DIR>          executionHistory
+09/23/2026  01:51 AM    <DIR>          fileChanges
+09/23/2026  01:51 AM    <DIR>          fileHashes
+09/23/2026  01:51 AM                 0 gc.properties
+               1 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\.gradle\9.4.1\checksums
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM                17 checksums.lock
+09/23/2026  01:51 AM            18,605 sha1-checksums.bin
+               2 File(s)         18,622 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\.gradle\9.4.1\executionHistory
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM         3,048,336 executionHistory.bin
+09/23/2026  01:51 AM                17 executionHistory.lock
+               2 File(s)      3,048,353 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\.gradle\9.4.1\fileChanges
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM                 1 last-build.bin
+               1 File(s)              1 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\.gradle\9.4.1\fileHashes
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM            82,765 fileHashes.bin
+09/23/2026  01:51 AM                17 fileHashes.lock
+09/23/2026  01:51 AM            20,265 resourceHashesCache.bin
+               3 File(s)        103,047 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\.gradle\buildOutputCleanup
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM                17 buildOutputCleanup.lock
+09/23/2026  01:51 AM                59 cache.properties
+09/23/2026  01:51 AM            22,295 outputFiles.bin
+               3 File(s)         22,371 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\.gradle\vcs-1
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM                 0 gc.properties
+               1 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\.idea
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM               217 AndroidProjectSystem.xml
+09/23/2026  01:51 AM               174 compiler.xml
+09/23/2026  01:51 AM               449 deploymentTargetSelector.xml
+09/23/2026  01:51 AM               646 gradle.xml
+09/23/2026  01:51 AM               416 misc.xml
+09/23/2026  01:51 AM               980 runConfigurations.xml
+09/23/2026  01:51 AM             8,791 workspace.xml
+               7 File(s)         11,673 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM                 2 .gitignore
+09/23/2026  01:51 AM    <DIR>          build
+09/23/2026  01:51 AM             2,243 build.gradle.kts
+09/23/2026  01:51 AM               693 google-services.json
+09/23/2026  01:51 AM               770 proguard-rules.pro
+09/23/2026  01:51 AM    <DIR>          src
+               4 File(s)          3,708 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          generated
+09/23/2026  01:51 AM    <DIR>          gmpAppId
+09/23/2026  01:51 AM    <DIR>          intermediates
+09/23/2026  01:51 AM    <DIR>          kotlin
+09/23/2026  01:51 AM    <DIR>          outputs
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\generated
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          res
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\generated\res
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          processDebugGoogleServices
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\generated\res\processDebugGoogleServices
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          values
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\generated\res\processDebugGoogleServices\values
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM               659 values.xml
+               1 File(s)            659 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\gmpAppId
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM                43 debug.txt
+               1 File(s)             43 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          android_res_source_set_path_map
+09/23/2026  01:51 AM    <DIR>          annotation_processor_list
+09/23/2026  01:51 AM    <DIR>          apk
+09/23/2026  01:51 AM    <DIR>          apk_ide_redirect_file
+09/23/2026  01:51 AM    <DIR>          app_metadata
+09/23/2026  01:51 AM    <DIR>          built_in_kotlinc
+09/23/2026  01:51 AM    <DIR>          compatible_screen_manifest
+09/23/2026  01:51 AM    <DIR>          compile_and_runtime_r_class_jar
+09/23/2026  01:51 AM    <DIR>          compile_r_class_jar
+09/23/2026  01:51 AM    <DIR>          compile_symbol_list
+09/23/2026  01:51 AM    <DIR>          desugar_graph
+09/23/2026  01:51 AM    <DIR>          dex
+09/23/2026  01:51 AM    <DIR>          dex_archive_input_jar_hashes
+09/23/2026  01:51 AM    <DIR>          dex_number_of_buckets_file
+09/23/2026  01:51 AM    <DIR>          incremental
+09/23/2026  01:51 AM    <DIR>          java_res
+09/23/2026  01:51 AM    <DIR>          linked_resources_binary_format
+09/23/2026  01:51 AM    <DIR>          local_only_symbol_list
+09/23/2026  01:51 AM    <DIR>          manifest_merge_blame_file
+09/23/2026  01:51 AM    <DIR>          merged_java_res
+09/23/2026  01:51 AM    <DIR>          merged_manifest
+09/23/2026  01:51 AM    <DIR>          merged_manifests
+09/23/2026  01:51 AM    <DIR>          merged_native_libs
+09/23/2026  01:51 AM    <DIR>          merged_res
+09/23/2026  01:51 AM    <DIR>          merged_res_blame_folder
+09/23/2026  01:51 AM    <DIR>          navigation_json
+09/23/2026  01:51 AM    <DIR>          nested_resources_validation_report
+09/23/2026  01:51 AM    <DIR>          packaged_manifests
+09/23/2026  01:51 AM    <DIR>          packaged_res
+09/23/2026  01:51 AM    <DIR>          project_dex_archive
+09/23/2026  01:51 AM    <DIR>          runtime_symbol_list
+09/23/2026  01:51 AM    <DIR>          signing_config_versions
+09/23/2026  01:51 AM    <DIR>          stable_resource_ids_file
+09/23/2026  01:51 AM    <DIR>          stripped_native_libs
+09/23/2026  01:51 AM    <DIR>          symbol_list_with_package_name
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\android_res_source_set_path_map
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          debug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\android_res_source_set_path_map\debug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          mapDebugSourceSetPaths
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\android_res_source_set_path_map\debug\mapDebugSourceSetPaths
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM            11,758 file-map.txt
+               1 File(s)         11,758 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\annotation_processor_list
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          debug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\annotation_processor_list\debug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          javaPreCompileDebug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\annotation_processor_list\debug\javaPreCompileDebug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM                 2 annotationProcessors.json
+               1 File(s)              2 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\apk
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          debug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\apk\debug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM        47,152,511 app-debug.apk
+09/23/2026  01:51 AM               419 output-metadata.json
+               2 File(s)     47,152,930 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\apk_ide_redirect_file
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          debug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\apk_ide_redirect_file\debug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          createDebugApkListingFileRedirect
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\apk_ide_redirect_file\debug\createDebugApkListingFileRedirect
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM                83 redirect.txt
+               1 File(s)             83 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\app_metadata
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          debug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\app_metadata\debug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          writeDebugAppMetadata
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\app_metadata\debug\writeDebugAppMetadata
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM                58 app-metadata.properties
+               1 File(s)             58 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\built_in_kotlinc
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          debug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\built_in_kotlinc\debug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          compileDebugKotlin
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\built_in_kotlinc\debug\compileDebugKotlin
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          classes
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\built_in_kotlinc\debug\compileDebugKotlin\classes
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          com
+09/23/2026  01:51 AM    <DIR>          META-INF
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\built_in_kotlinc\debug\compileDebugKotlin\classes\com
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          example
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\built_in_kotlinc\debug\compileDebugKotlin\classes\com\example
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          fcams
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\built_in_kotlinc\debug\compileDebugKotlin\classes\com\example\fcams
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM             3,848 ComposableSingletons$LecturerDashBoardActivityKt.class
+09/23/2026  01:51 AM             4,520 ComposableSingletons$StudentDashboardActivityKt.class
+09/23/2026  01:51 AM            19,819 FirebaseRepository.class
+09/23/2026  01:51 AM             4,504 LecturerDashboardActivity$LecturerDashboardScreen$1$1.class
+09/23/2026  01:51 AM             2,015 LecturerDashboardActivity$LecturerDashboardScreen$2$1$1$1$1$1$1$1.class
+09/23/2026  01:51 AM            14,408 LecturerDashboardActivity$LecturerDashboardScreen$2$1$1$1$1.class
+09/23/2026  01:51 AM             2,082 LecturerDashboardActivity$LecturerDashboardScreen$lambda$9$lambda$8$lambda$7$$inlined$items$default$1.class
+09/23/2026  01:51 AM             2,324 LecturerDashboardActivity$LecturerDashboardScreen$lambda$9$lambda$8$lambda$7$$inlined$items$default$2.class
+09/23/2026  01:51 AM             2,335 LecturerDashboardActivity$LecturerDashboardScreen$lambda$9$lambda$8$lambda$7$$inlined$items$default$3.class
+09/23/2026  01:51 AM             6,607 LecturerDashboardActivity$LecturerDashboardScreen$lambda$9$lambda$8$lambda$7$$inlined$items$default$4.class
+09/23/2026  01:51 AM            23,218 LecturerDashboardActivity.class
+09/23/2026  01:51 AM             6,998 MainActivity.class
+09/23/2026  01:51 AM             3,691 Room.class
+09/23/2026  01:51 AM             4,748 RoomBooking.class
+09/23/2026  01:51 AM            15,670 RoomScheduleActivity.class
+09/23/2026  01:51 AM             5,867 RoomSwapRequest.class
+09/23/2026  01:51 AM             5,254 SetBookingActivity.class
+09/23/2026  01:51 AM             4,488 StudentDashboardActivity$StudentDashboardScreen$1$1.class
+09/23/2026  01:51 AM             1,955 StudentDashboardActivity$StudentDashboardScreen$2$1$1$1$1$1$1$1$1.class
+09/23/2026  01:51 AM             2,012 StudentDashboardActivity$StudentDashboardScreen$2$1$1$1$1$1$1$2$1.class
+09/23/2026  01:51 AM            18,608 StudentDashboardActivity$StudentDashboardScreen$2$1$1$1$1.class
+09/23/2026  01:51 AM             2,076 StudentDashboardActivity$StudentDashboardScreen$lambda$9$lambda$8$lambda$7$$inlined$items$default$1.class
+09/23/2026  01:51 AM             2,318 StudentDashboardActivity$StudentDashboardScreen$lambda$9$lambda$8$lambda$7$$inlined$items$default$2.class
+09/23/2026  01:51 AM             2,329 StudentDashboardActivity$StudentDashboardScreen$lambda$9$lambda$8$lambda$7$$inlined$items$default$3.class
+09/23/2026  01:51 AM             6,587 StudentDashboardActivity$StudentDashboardScreen$lambda$9$lambda$8$lambda$7$$inlined$items$default$4.class
+09/23/2026  01:51 AM            22,849 StudentDashboardActivity.class
+              26 File(s)        191,130 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\built_in_kotlinc\debug\compileDebugKotlin\classes\META-INF
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM                24 app.kotlin_module
+               1 File(s)             24 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\compatible_screen_manifest
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          debug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\compatible_screen_manifest\debug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          createDebugCompatibleScreenManifests
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\compatible_screen_manifest\debug\createDebugCompatibleScreenManifests
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM               202 output-metadata.json
+               1 File(s)            202 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\compile_and_runtime_r_class_jar
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          debug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\compile_and_runtime_r_class_jar\debug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          processDebugResources
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\compile_and_runtime_r_class_jar\debug\processDebugResources
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM           776,708 R.jar
+               1 File(s)        776,708 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\compile_r_class_jar
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          debug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\compile_r_class_jar\debug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          generateDebugRFile
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\compile_r_class_jar\debug\generateDebugRFile
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM             3,629 R.jar
+               1 File(s)          3,629 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\compile_symbol_list
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          debug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\compile_symbol_list\debug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          generateDebugRFile
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\compile_symbol_list\debug\generateDebugRFile
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM               756 R.txt
+               1 File(s)            756 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\desugar_graph
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          debug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\desugar_graph\debug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          dexBuilderDebug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\desugar_graph\debug\dexBuilderDebug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          out
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\desugar_graph\debug\dexBuilderDebug\out
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          currentProject
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\desugar_graph\debug\dexBuilderDebug\out\currentProject
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          dirs_bucket_0
+09/23/2026  01:51 AM    <DIR>          dirs_bucket_1
+09/23/2026  01:51 AM    <DIR>          jar_61b41ae2366b8648e944fb87a9ffbed949c2c170985f4198e3d83eb810f2ae07_bucket_0
+09/23/2026  01:51 AM    <DIR>          jar_61b41ae2366b8648e944fb87a9ffbed949c2c170985f4198e3d83eb810f2ae07_bucket_1
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\desugar_graph\debug\dexBuilderDebug\out\currentProject\dirs_bucket_0
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM               235 graph.bin
+               1 File(s)            235 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\desugar_graph\debug\dexBuilderDebug\out\currentProject\dirs_bucket_1
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM               235 graph.bin
+               1 File(s)            235 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\desugar_graph\debug\dexBuilderDebug\out\currentProject\jar_61b41ae2366b8648e944fb87a9ffbed949c2c170985f4198e3d83eb810f2ae07_bucket_0
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM               235 graph.bin
+               1 File(s)            235 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\desugar_graph\debug\dexBuilderDebug\out\currentProject\jar_61b41ae2366b8648e944fb87a9ffbed949c2c170985f4198e3d83eb810f2ae07_bucket_1
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM               235 graph.bin
+               1 File(s)            235 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\dex
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          debug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\dex\debug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          mergeExtDexDebug
+09/23/2026  01:51 AM    <DIR>          mergeProjectDexDebug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\dex\debug\mergeExtDexDebug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM        16,676,688 classes.dex
+09/23/2026  01:51 AM        10,206,784 classes2.dex
+09/23/2026  01:51 AM         7,346,788 classes3.dex
+09/23/2026  01:51 AM         9,674,152 classes4.dex
+               4 File(s)     43,904,412 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\dex\debug\mergeProjectDexDebug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          0
+09/23/2026  01:51 AM    <DIR>          15
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\dex\debug\mergeProjectDexDebug\0
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM           560,916 classes.dex
+               1 File(s)        560,916 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\dex\debug\mergeProjectDexDebug\15
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM           106,268 classes.dex
+               1 File(s)        106,268 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\dex_archive_input_jar_hashes
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          debug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\dex_archive_input_jar_hashes\debug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          dexBuilderDebug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\dex_archive_input_jar_hashes\debug\dexBuilderDebug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM               392 out
+               1 File(s)            392 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\dex_number_of_buckets_file
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          debug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\dex_number_of_buckets_file\debug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          dexBuilderDebug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\dex_number_of_buckets_file\debug\dexBuilderDebug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM                 1 out
+               1 File(s)              1 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\incremental
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          debug
+09/23/2026  01:51 AM    <DIR>          debug-mergeJavaRes
+09/23/2026  01:51 AM    <DIR>          mergeDebugAssets
+09/23/2026  01:51 AM    <DIR>          mergeDebugJniLibFolders
+09/23/2026  01:51 AM    <DIR>          packageDebug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\incremental\debug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          mergeDebugResources
+09/23/2026  01:51 AM    <DIR>          packageDebugResources
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\incremental\debug\mergeDebugResources
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM             1,061 compile-file-map.properties
+09/23/2026  01:51 AM         3,721,259 merger.xml
+               2 File(s)      3,722,320 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\incremental\debug\packageDebugResources
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM             1,056 compile-file-map.properties
+09/23/2026  01:51 AM             4,693 merger.xml
+               2 File(s)          5,749 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\incremental\debug-mergeJavaRes
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM            27,956 merge-state
+09/23/2026  01:51 AM    <DIR>          zip-cache
+               1 File(s)         27,956 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\incremental\debug-mergeJavaRes\zip-cache
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM             1,799 +QncWu1NwJq51wHCEhIAgg==
+09/23/2026  01:51 AM            24,425 +W_UCzFfDxaza6+LVBI17w==
+09/23/2026  01:51 AM            36,102 1b+QzohPEL815gDbB3u88w==
+09/23/2026  01:51 AM            71,355 1jT8VvJOEcyXSTwTtqSlnw==
+09/23/2026  01:51 AM            34,841 2NF+MovjV_mHIZfXVA60LA==
+09/23/2026  01:51 AM             6,623 2P0h4n2lyOhiO8jbkRZnBQ==
+09/23/2026  01:51 AM             3,954 36UzYoizLJ5c+cBoJrVhJw==
+09/23/2026  01:51 AM            84,802 3L5ewaD3O7Dk_+s6WNLRaQ==
+09/23/2026  01:51 AM           253,026 4aqWE4V_uHvg1NrdwinGjA==
+09/23/2026  01:51 AM           313,133 56pDFmyPEdcRcVQzFr1BIg==
+09/23/2026  01:51 AM             4,411 5CD5YCVGQG5PbUYVtHey8A==
+09/23/2026  01:51 AM             6,487 5CPUhmdAN5VdKdPk8wmRZw==
+09/23/2026  01:51 AM           294,625 5DU19a+GmoZXPNEJMle_FQ==
+09/23/2026  01:51 AM             1,182 5farTr0wC1f4IhhjrfJSSQ==
+09/23/2026  01:51 AM             2,947 5GCjwkOQZ5QteL5A6SNZ4Q==
+09/23/2026  01:51 AM               162 5lg6qtNkRsh7g_QGoWt24g==
+09/23/2026  01:51 AM             2,181 6FqzraQxJQYlIoJHDNS39g==
+09/23/2026  01:51 AM               174 6zTghQLZue_DjMbgtlZUoA==
+09/23/2026  01:51 AM             6,736 70AnwkpckUdchM2f7A7Pjw==
+09/23/2026  01:51 AM            68,061 75YT7PlXbyyl7aoL1iZgmg==
+09/23/2026  01:51 AM             1,041 8FMTit+XdCh6oKwW2NKbHA==
+09/23/2026  01:51 AM               438 8wV9rTlCYtNpmT_LLvoYQQ==
+09/23/2026  01:51 AM            34,619 9oaqKjNywvRkjX8zFHl0mg==
+09/23/2026  01:51 AM               166 A5l_rnxMoPDDaCVIPEU9CQ==
+09/23/2026  01:51 AM            65,182 aDTSAQ8gKXJwWRjoP6zNCw==
+09/23/2026  01:51 AM            20,066 Aj_2TJOO+v969P974_HVsw==
+09/23/2026  01:51 AM             2,008 aKyZ3drgZQ+Bv73AdKvdCA==
+09/23/2026  01:51 AM             7,740 atP7egJufSF+EpRhc6j3pw==
+09/23/2026  01:51 AM            40,415 aW_YBq+GDhU0km5+H21ymg==
+09/23/2026  01:51 AM             3,555 axhJSqFuOD6v4WxwyGpc2A==
+09/23/2026  01:51 AM             1,590 a_9MXFwUWRJ27soFNytV1A==
+09/23/2026  01:51 AM            21,528 a_NjaK+4SI6zS_fPwJLwPQ==
+09/23/2026  01:51 AM            48,545 BKCSfJv7x4f6q1Xct_b8MQ==
+09/23/2026  01:51 AM             2,686 bm0DE+GEfOzOLiZTLidRgw==
+09/23/2026  01:51 AM             3,024 BwHqgSUDViiR+krvMFSyCw==
+09/23/2026  01:51 AM             1,438 C++EGVyq2nvx5zVeoPeg6Q==
+09/23/2026  01:51 AM            13,682 c2HFFEEPzyWKMZDYPpv5xA==
+09/23/2026  01:51 AM               150 D78L2BhrAV2pnku3Ds_qCA==
+09/23/2026  01:51 AM             1,671 DAXeB1wERe8EL3zOtQDYSQ==
+09/23/2026  01:51 AM               605 dFVZlZ1AbkwAZ+mOQyFKBQ==
+09/23/2026  01:51 AM            33,089 dPDmza8Sz93OYg5Kp8FVzA==
+09/23/2026  01:51 AM               797 dsdEPAW2t2hkljTl9WN3lQ==
+09/23/2026  01:51 AM             1,704 dU6SdTYKPCNco_RAbxa3NA==
+09/23/2026  01:51 AM             2,917 DUSLTTqi_qc0W79oUm1+Bw==
+09/23/2026  01:51 AM             2,203 DwXKxEDb5iDxFRAo6LZJJw==
+09/23/2026  01:51 AM            30,353 dzTW1w22eHUFlMhaj9St5g==
+09/23/2026  01:51 AM            29,961 eA_0SmX0yk0wxk5Wh+DmJA==
+09/23/2026  01:51 AM           144,877 edsD5_CRQNIyxg5Wvo8pbw==
+09/23/2026  01:51 AM               896 ejL7LHaJOj0wKyU1LMwH0g==
+09/23/2026  01:51 AM               195 Eop5czzDjJ5Ec8hIC5Z0QQ==
+09/23/2026  01:51 AM            15,780 EOsSneVNi+lGHHisyzAqnQ==
+09/23/2026  01:51 AM               427 ETSHBZB6rxfPzds1qwh4RA==
+09/23/2026  01:51 AM             6,480 EV8nyzOAGnqT5GbjKNSOCw==
+09/23/2026  01:51 AM            12,332 EY_qGYgqZX1oo8yEGSquEw==
+09/23/2026  01:51 AM             4,256 EZ+eUK4PUBccuQA1kOmWNA==
+09/23/2026  01:51 AM             2,826 F5CvM67UM_Et2_s8szLqqg==
+09/23/2026  01:51 AM             6,115 FatcGYTeFN9HFjn8i_X8LQ==
+09/23/2026  01:51 AM             4,855 fE6khcHqUySUueJ7hTmGbw==
+09/23/2026  01:51 AM               656 FM53QPiRua7yiTqfV6p6Zg==
+09/23/2026  01:51 AM               937 fSNHF12irYMQl_Ue0mSwPw==
+09/23/2026  01:51 AM             9,890 fSqFlnqijDf3ynm4CqOHZQ==
+09/23/2026  01:51 AM            61,552 G0InvB8VGrAwHhWGKYpvLg==
+09/23/2026  01:51 AM            10,925 G2+4v8kSA5yWGS7ErmqmMA==
+09/23/2026  01:51 AM               214 gBevNBEsDRIhbkosIGTR0w==
+09/23/2026  01:51 AM             7,880 giWtVoYFbHcJh0ITyiUBgg==
+09/23/2026  01:51 AM           119,431 GKiTPArv_0uDpdgiIo7TAg==
+09/23/2026  01:51 AM            19,223 gl_h6bHeZtDAMZOgh0iR1g==
+09/23/2026  01:51 AM            18,470 gQ_Mj9wfnW4a3sQUS79Ckw==
+09/23/2026  01:51 AM           152,631 gvuSpXkqLSndaZcN+HdEYQ==
+09/23/2026  01:51 AM               215 h+S+qS7ArVXjbh5lQFi+Ig==
+09/23/2026  01:51 AM             2,535 h3oK0vPKAVOAdFsgJwH2_A==
+09/23/2026  01:51 AM            75,863 Ha8nRG9etJpPdSoanq+gAA==
+09/23/2026  01:51 AM               703 HCb8ola6ftDuDl3dJYrowg==
+09/23/2026  01:51 AM             2,599 Hga_sKb44xfuegX6ozitiA==
+09/23/2026  01:51 AM             6,025 hO3AFGuvtCdJ5efLNTc6Sw==
+09/23/2026  01:51 AM             2,567 hP0U2oY6kvtLZKYafWzKzA==
+09/23/2026  01:51 AM            56,298 HQfPkOLNu3_7a0Qo1LYwfQ==
+09/23/2026  01:51 AM             4,734 HrZWwtX_8y83CJRRZKulfw==
+09/23/2026  01:51 AM           140,122 hxzP9O3qD59LBT_RUdbopA==
+09/23/2026  01:51 AM               258 hy+fHrMWqqVkltl8agwd+A==
+09/23/2026  01:51 AM             1,968 I+MrI4FJTEIM9By1keceTA==
+09/23/2026  01:51 AM            12,662 igTlCEhqgbfky_x63TQqjg==
+09/23/2026  01:51 AM               635 ii3t2i2kzxK3yqFrebQJNA==
+09/23/2026  01:51 AM            23,059 jdlxYmSDTiHqQQv5Y5vAJg==
+09/23/2026  01:51 AM             2,915 jOr4a9WImymVQfgbxtIWtA==
+09/23/2026  01:51 AM             1,128 JP2kifgLazKfKpIGz26P1g==
+09/23/2026  01:51 AM            20,692 JPGOLESNatMFh5LDzvuDlw==
+09/23/2026  01:51 AM             1,328 JQiwsqNu9eEvZ9pPlIeD9w==
+09/23/2026  01:51 AM             5,320 JtRZwZl31UNe0UNlEUYvRw==
+09/23/2026  01:51 AM               608 JUAzOeWzckgCGzDxg6v+4A==
+09/23/2026  01:51 AM             1,913 jWOwQzEZecr9ttI07EC1rA==
+09/23/2026  01:51 AM               683 kc90e6BcHHVVhGtE5W0APQ==
+09/23/2026  01:51 AM               394 kvHvcc9sUKP3R3B2HxL6RA==
+09/23/2026  01:51 AM            47,131 l17t78clF9u+XHPsAJB3Ww==
+09/23/2026  01:51 AM             8,259 l9AG4xju_aiOqPsyh86WLg==
+09/23/2026  01:51 AM             9,215 LcY8GDtmNknKkYsjpGkmkw==
+09/23/2026  01:51 AM           446,208 Lrzop931c75v1mLVEnr1Yw==
+09/23/2026  01:51 AM             2,132 lUcyHXceBspjfg11ApKfWw==
+09/23/2026  01:51 AM               410 mbNlE9q4OkHRImdhddK2zA==
+09/23/2026  01:51 AM             4,884 n9xZa9sxvroX8E_Zk6cFsw==
+09/23/2026  01:51 AM             1,340 NdKduzNtmmwb7AxH1ljXhQ==
+09/23/2026  01:51 AM            19,720 nSvblhjQJojheiEjQ7JG+A==
+09/23/2026  01:51 AM            51,490 O3OB9FYwJrmhPcklgPuZ5g==
+09/23/2026  01:51 AM             2,775 pd7v0rJPu5B92Vr6Rjd_tw==
+09/23/2026  01:51 AM            42,936 pGVU6u8cB22CeUt86YZISA==
+09/23/2026  01:51 AM            37,512 pHOLBavn8liYC8GQQH5kXw==
+09/23/2026  01:51 AM             4,429 PjCXjMBoSw3XuteOyw8XGg==
+09/23/2026  01:51 AM            50,481 pNaNDosk3pyT3hJIzUzWVw==
+09/23/2026  01:51 AM            53,946 pwaEsAjE8vd1IXKRKLOjaQ==
+09/23/2026  01:51 AM           133,707 Pxkz8m6gVDl1WeLUYvsCfQ==
+09/23/2026  01:51 AM             7,882 qeDCK3SgONX_4uTfJLy6pA==
+09/23/2026  01:51 AM             1,933 Qfgv2CiBLLAt0DGj4y5Bqg==
+09/23/2026  01:51 AM            79,577 QLe8s77ZBLXUO_gqQNYp6Q==
+09/23/2026  01:51 AM             7,079 QmSCSN1P46f6D0DEThh1tQ==
+09/23/2026  01:51 AM                89 QOZWzeBBBzn39iAiQ24bRg==
+09/23/2026  01:51 AM             2,800 RCCGDx9IJzcOlvrG7Xddfg==
+09/23/2026  01:51 AM             1,081 RhQ59H6ilK75f_3HzMBkcg==
+09/23/2026  01:51 AM           234,820 RjPOv2gTtMgAvP0hhSWcDA==
+09/23/2026  01:51 AM            51,640 rrlyLHYZ9me+jmufJkDs6A==
+09/23/2026  01:51 AM               887 RyfbOullDBmbKKFx9BW9GA==
+09/23/2026  01:51 AM            45,583 sdWrmTsGXsXMfXVKCSO5Kg==
+09/23/2026  01:51 AM           210,742 sGjXQaPPLB99URBb2Ak1Eg==
+09/23/2026  01:51 AM             3,651 SIX0thqQc698TJ6tTcLGwg==
+09/23/2026  01:51 AM             4,851 sSRrubl1Wf7Qaj65iGxyQg==
+09/23/2026  01:51 AM            28,800 T0bUEW8MLdn2VP5ptOloXA==
+09/23/2026  01:51 AM            22,312 T31Znm6o6EIIhae_LWOLKg==
+09/23/2026  01:51 AM               798 T4Zstg+Pa6j+YNk2nuCzcQ==
+09/23/2026  01:51 AM             5,480 tFmJaVN6ASpdhgtBBM3_5g==
+09/23/2026  01:51 AM             1,114 TjV_qHm1kmAIYUDjvwLkFQ==
+09/23/2026  01:51 AM             4,358 TvgYoVSmQJe7nOi9Wd+n+w==
+09/23/2026  01:51 AM               322 TxvcMWlN3dKySPJQygYbDw==
+09/23/2026  01:51 AM             7,132 TYtT_0B7kQ63zhqd86R5iA==
+09/23/2026  01:51 AM             1,042 TZmvYMqEq0UwKbPH6+Ttww==
+09/23/2026  01:51 AM             2,456 ueTs2Is7OQyp2eqbSHB06w==
+09/23/2026  01:51 AM             8,904 uHLbucdzFeg_LanSG8poNQ==
+09/23/2026  01:51 AM             1,559 uKHPQiqVZq8DrNmE7ikyRQ==
+09/23/2026  01:51 AM               930 uLo1Rd6Jsyc6E9Keolpv2w==
+09/23/2026  01:51 AM            12,054 uP8_PWMm3TkTy6on32ubww==
+09/23/2026  01:51 AM             3,293 urrVztnMl3UzzK3wKGd0hQ==
+09/23/2026  01:51 AM               777 VNErmG5NsL5Ei7mYz0b8Sw==
+09/23/2026  01:51 AM               142 vzPOcX6cTSJ9Or6exyq6hw==
+09/23/2026  01:51 AM           322,711 W8oxT3sp8DtC3VQuzU2rxA==
+09/23/2026  01:51 AM            90,596 wCBrDZwtLMfvTKCT3mjq5Q==
+09/23/2026  01:51 AM             4,767 wh0+N+uElqReIuuJxyjfGA==
+09/23/2026  01:51 AM               982 wMvxXOy9vyiI_Xvk9R36lQ==
+09/23/2026  01:51 AM               918 wNQLQTzwooH9FW5vHBfdbw==
+09/23/2026  01:51 AM             3,168 woyLslJPlm0KC+OrzNFQpA==
+09/23/2026  01:51 AM            20,389 Wr5TbMSuaGdL2glZcDi2ZA==
+09/23/2026  01:51 AM             7,340 wXP6Qc+c1kVMuajLoqPJpQ==
+09/23/2026  01:51 AM               483 xEpdFQZu0bCEPBg+Lhdhhg==
+09/23/2026  01:51 AM            23,923 xH1kUQuoUw8zP7NAqSwwZQ==
+09/23/2026  01:51 AM                 2 xvWjMk6iH9ZH4zmc347slw==
+09/23/2026  01:51 AM             2,994 ylyLFjEktZROA_0cQtswFQ==
+09/23/2026  01:51 AM               862 YUM5XWlQo1Msn_fwVW0P5w==
+09/23/2026  01:51 AM             5,176 YUzAOkvKQ5ROvegqH2G8bQ==
+09/23/2026  01:51 AM             7,776 zgraTRd8YdC8P7X+WC7W+g==
+09/23/2026  01:51 AM             3,872 zOr7fCJpsjKn+mxXCS55wA==
+09/23/2026  01:51 AM           102,442 z_QQexziRx32RfKRwejA0A==
+09/23/2026  01:51 AM             2,516 _bDbzhI3OWe+_E7gioBbfg==
+09/23/2026  01:51 AM             6,067 _kRmDn_RsG9B_G5XD6owiQ==
+09/23/2026  01:51 AM             2,135 _LsreTHUsyQhqQdjlra+Lw==
+             161 File(s)      4,834,053 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\incremental\mergeDebugAssets
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM               467 merger.xml
+               1 File(s)            467 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\incremental\mergeDebugJniLibFolders
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM               469 merger.xml
+               1 File(s)            469 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\incremental\packageDebug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          tmp
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\incremental\packageDebug\tmp
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          debug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\incremental\packageDebug\tmp\debug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM             1,046 dex-renamer-state.txt
+09/23/2026  01:51 AM    <DIR>          zip-cache
+               1 File(s)          1,046 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\incremental\packageDebug\tmp\debug\zip-cache
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM           144,462 androidResources
+09/23/2026  01:51 AM            26,700 javaResources0
+               2 File(s)        171,162 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\java_res
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          debug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\java_res\debug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          processDebugJavaRes
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\java_res\debug\processDebugJavaRes
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          out
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\java_res\debug\processDebugJavaRes\out
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          META-INF
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\java_res\debug\processDebugJavaRes\out\META-INF
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM                24 app.kotlin_module
+               1 File(s)             24 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\linked_resources_binary_format
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          debug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\linked_resources_binary_format\debug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          processDebugResources
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\linked_resources_binary_format\debug\processDebugResources
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM         2,323,807 linked-resources-binary-format-debug.ap_
+09/23/2026  01:51 AM               440 output-metadata.json
+               2 File(s)      2,324,247 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\local_only_symbol_list
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          debug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\local_only_symbol_list\debug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          parseDebugLocalResources
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\local_only_symbol_list\debug\parseDebugLocalResources
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM               605 R-def.txt
+               1 File(s)            605 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\manifest_merge_blame_file
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          debug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\manifest_merge_blame_file\debug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          processDebugMainManifest
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\manifest_merge_blame_file\debug\processDebugMainManifest
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM            48,788 manifest-merger-blame-debug-report.txt
+               1 File(s)         48,788 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\merged_java_res
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          debug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\merged_java_res\debug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          mergeDebugJavaResource
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\merged_java_res\debug\mergeDebugJavaResource
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM           220,697 base.jar
+               1 File(s)        220,697 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\merged_manifest
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          debug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\merged_manifest\debug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          processDebugMainManifest
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\merged_manifest\debug\processDebugMainManifest
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM            10,995 AndroidManifest.xml
+               1 File(s)         10,995 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\merged_manifests
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          debug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\merged_manifests\debug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          processDebugManifest
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\merged_manifests\debug\processDebugManifest
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM            10,995 AndroidManifest.xml
+09/23/2026  01:51 AM               405 output-metadata.json
+               2 File(s)         11,400 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\merged_native_libs
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          debug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\merged_native_libs\debug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          mergeDebugNativeLibs
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\merged_native_libs\debug\mergeDebugNativeLibs
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          out
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\merged_native_libs\debug\mergeDebugNativeLibs\out
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          lib
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\merged_native_libs\debug\mergeDebugNativeLibs\out\lib
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          arm64-v8a
+09/23/2026  01:51 AM    <DIR>          armeabi-v7a
+09/23/2026  01:51 AM    <DIR>          x86
+09/23/2026  01:51 AM    <DIR>          x86_64
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\merged_native_libs\debug\mergeDebugNativeLibs\out\lib\arm64-v8a
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM            10,096 libandroidx.graphics.path.so
+09/23/2026  01:51 AM             7,112 libdatastore_shared_counter.so
+               2 File(s)         17,208 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\merged_native_libs\debug\mergeDebugNativeLibs\out\lib\armeabi-v7a
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM             7,252 libandroidx.graphics.path.so
+09/23/2026  01:51 AM             4,416 libdatastore_shared_counter.so
+               2 File(s)         11,668 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\merged_native_libs\debug\mergeDebugNativeLibs\out\lib\x86
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM             9,284 libandroidx.graphics.path.so
+09/23/2026  01:51 AM             5,148 libdatastore_shared_counter.so
+               2 File(s)         14,432 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\merged_native_libs\debug\mergeDebugNativeLibs\out\lib\x86_64
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM            10,760 libandroidx.graphics.path.so
+09/23/2026  01:51 AM             6,224 libdatastore_shared_counter.so
+               2 File(s)         16,984 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\merged_res
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          debug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\merged_res\debug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          mergeDebugResources
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\merged_res\debug\mergeDebugResources
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM             2,032 layout_activity_main.xml.flat
+09/23/2026  01:51 AM             2,248 layout_activity_room_schedule.xml.flat
+09/23/2026  01:51 AM             2,328 layout_activity_set_booking.xml.flat
+09/23/2026  01:51 AM            18,480 values-af_values-af.arsc.flat
+09/23/2026  01:51 AM            21,420 values-am_values-am.arsc.flat
+09/23/2026  01:51 AM            21,836 values-ar_values-ar.arsc.flat
+09/23/2026  01:51 AM            22,896 values-as_values-as.arsc.flat
+09/23/2026  01:51 AM            19,500 values-az_values-az.arsc.flat
+09/23/2026  01:51 AM             8,832 values-b+es+419_values-b+es+419.arsc.flat
+09/23/2026  01:51 AM            20,216 values-b+sr+Latn_values-b+sr+Latn.arsc.flat
+09/23/2026  01:51 AM            23,080 values-be_values-be.arsc.flat
+09/23/2026  01:51 AM            23,148 values-bg_values-bg.arsc.flat
+09/23/2026  01:51 AM            25,700 values-bn_values-bn.arsc.flat
+09/23/2026  01:51 AM            19,176 values-bs_values-bs.arsc.flat
+09/23/2026  01:51 AM            19,404 values-ca_values-ca.arsc.flat
+09/23/2026  01:51 AM            19,260 values-cs_values-cs.arsc.flat
+09/23/2026  01:51 AM            18,516 values-da_values-da.arsc.flat
+09/23/2026  01:51 AM            19,296 values-de_values-de.arsc.flat
+09/23/2026  01:51 AM            23,736 values-el_values-el.arsc.flat
+09/23/2026  01:51 AM             8,792 values-en-rAU_values-en-rAU.arsc.flat
+09/23/2026  01:51 AM             8,780 values-en-rCA_values-en-rCA.arsc.flat
+09/23/2026  01:51 AM            18,968 values-en-rGB_values-en-rGB.arsc.flat
+09/23/2026  01:51 AM             8,792 values-en-rIN_values-en-rIN.arsc.flat
+09/23/2026  01:51 AM            46,248 values-en-rXC_values-en-rXC.arsc.flat
+09/23/2026  01:51 AM            20,104 values-es-rUS_values-es-rUS.arsc.flat
+09/23/2026  01:51 AM            19,436 values-es_values-es.arsc.flat
+09/23/2026  01:51 AM            18,884 values-et_values-et.arsc.flat
+09/23/2026  01:51 AM            19,220 values-eu_values-eu.arsc.flat
+09/23/2026  01:51 AM            21,480 values-fa_values-fa.arsc.flat
+09/23/2026  01:51 AM            18,892 values-fi_values-fi.arsc.flat
+09/23/2026  01:51 AM            20,540 values-fr-rCA_values-fr-rCA.arsc.flat
+09/23/2026  01:51 AM            19,560 values-fr_values-fr.arsc.flat
+09/23/2026  01:51 AM            19,512 values-gl_values-gl.arsc.flat
+09/23/2026  01:51 AM            24,880 values-gu_values-gu.arsc.flat
+09/23/2026  01:51 AM               288 values-h320dp-port-v13_values-h320dp-port-v13.arsc.flat
+09/23/2026  01:51 AM               272 values-h320dp-v13_values-h320dp-v13.arsc.flat
+09/23/2026  01:51 AM               796 values-h360dp-land-v13_values-h360dp-land-v13.arsc.flat
+09/23/2026  01:51 AM               796 values-h480dp-land-v13_values-h480dp-land-v13.arsc.flat
+09/23/2026  01:51 AM               492 values-h480dp-v13_values-h480dp-v13.arsc.flat
+09/23/2026  01:51 AM               288 values-h550dp-port-v13_values-h550dp-port-v13.arsc.flat
+09/23/2026  01:51 AM               272 values-h720dp-v13_values-h720dp-v13.arsc.flat
+09/23/2026  01:51 AM               480 values-hdpi-v4_values-hdpi-v4.arsc.flat
+09/23/2026  01:51 AM            25,528 values-hi_values-hi.arsc.flat
+09/23/2026  01:51 AM            19,084 values-hr_values-hr.arsc.flat
+09/23/2026  01:51 AM            19,720 values-hu_values-hu.arsc.flat
+09/23/2026  01:51 AM            22,608 values-hy_values-hy.arsc.flat
+09/23/2026  01:51 AM            18,700 values-in_values-in.arsc.flat
+09/23/2026  01:51 AM            18,772 values-is_values-is.arsc.flat
+09/23/2026  01:51 AM            19,224 values-it_values-it.arsc.flat
+09/23/2026  01:51 AM            20,568 values-iw_values-iw.arsc.flat
+09/23/2026  01:51 AM            20,148 values-ja_values-ja.arsc.flat
+09/23/2026  01:51 AM            25,900 values-ka_values-ka.arsc.flat
+09/23/2026  01:51 AM            22,048 values-kk_values-kk.arsc.flat
+09/23/2026  01:51 AM            26,260 values-km_values-km.arsc.flat
+09/23/2026  01:51 AM            26,924 values-kn_values-kn.arsc.flat
+09/23/2026  01:51 AM            19,080 values-ko_values-ko.arsc.flat
+09/23/2026  01:51 AM            22,836 values-ky_values-ky.arsc.flat
+09/23/2026  01:51 AM             3,944 values-land_values-land.arsc.flat
+09/23/2026  01:51 AM             1,712 values-large-v4_values-large-v4.arsc.flat
+09/23/2026  01:51 AM               336 values-ldltr-v21_values-ldltr-v21.arsc.flat
+09/23/2026  01:51 AM               476 values-ldrtl-v17_values-ldrtl-v17.arsc.flat
+09/23/2026  01:51 AM            25,112 values-lo_values-lo.arsc.flat
+09/23/2026  01:51 AM            19,684 values-lt_values-lt.arsc.flat
+09/23/2026  01:51 AM            19,832 values-lv_values-lv.arsc.flat
+09/23/2026  01:51 AM            22,764 values-mk_values-mk.arsc.flat
+09/23/2026  01:51 AM            28,088 values-ml_values-ml.arsc.flat
+09/23/2026  01:51 AM            22,152 values-mn_values-mn.arsc.flat
+09/23/2026  01:51 AM            25,036 values-mr_values-mr.arsc.flat
+09/23/2026  01:51 AM            18,976 values-ms_values-ms.arsc.flat
+09/23/2026  01:51 AM            27,624 values-my_values-my.arsc.flat
+09/23/2026  01:51 AM            18,396 values-nb_values-nb.arsc.flat
+09/23/2026  01:51 AM            26,984 values-ne_values-ne.arsc.flat
+09/23/2026  01:51 AM             9,756 values-night-v8_values-night-v8.arsc.flat
+09/23/2026  01:51 AM            18,968 values-nl_values-nl.arsc.flat
+09/23/2026  01:51 AM            23,536 values-or_values-or.arsc.flat
+09/23/2026  01:51 AM            24,508 values-pa_values-pa.arsc.flat
+09/23/2026  01:51 AM            19,224 values-pl_values-pl.arsc.flat
+09/23/2026  01:51 AM               244 values-port_values-port.arsc.flat
+09/23/2026  01:51 AM            19,876 values-pt-rBR_values-pt-rBR.arsc.flat
+09/23/2026  01:51 AM            20,176 values-pt-rPT_values-pt-rPT.arsc.flat
+09/23/2026  01:51 AM             8,808 values-pt_values-pt.arsc.flat
+09/23/2026  01:51 AM            19,400 values-ro_values-ro.arsc.flat
+09/23/2026  01:51 AM            22,728 values-ru_values-ru.arsc.flat
+09/23/2026  01:51 AM            24,772 values-si_values-si.arsc.flat
+09/23/2026  01:51 AM            19,312 values-sk_values-sk.arsc.flat
+09/23/2026  01:51 AM            19,100 values-sl_values-sl.arsc.flat
+09/23/2026  01:51 AM            19,360 values-sq_values-sq.arsc.flat
+09/23/2026  01:51 AM            22,152 values-sr_values-sr.arsc.flat
+09/23/2026  01:51 AM            18,804 values-sv_values-sv.arsc.flat
+09/23/2026  01:51 AM             1,708 values-sw600dp-v13_values-sw600dp-v13.arsc.flat
+09/23/2026  01:51 AM            19,048 values-sw_values-sw.arsc.flat
+09/23/2026  01:51 AM            28,256 values-ta_values-ta.arsc.flat
+09/23/2026  01:51 AM            27,100 values-te_values-te.arsc.flat
+09/23/2026  01:51 AM            24,684 values-th_values-th.arsc.flat
+09/23/2026  01:51 AM            19,436 values-tl_values-tl.arsc.flat
+09/23/2026  01:51 AM            18,952 values-tr_values-tr.arsc.flat
+09/23/2026  01:51 AM            22,664 values-uk_values-uk.arsc.flat
+09/23/2026  01:51 AM            21,948 values-ur_values-ur.arsc.flat
+09/23/2026  01:51 AM            18,908 values-uz_values-uz.arsc.flat
+09/23/2026  01:51 AM               404 values-v16_values-v16.arsc.flat
+09/23/2026  01:51 AM             3,688 values-v17_values-v17.arsc.flat
+09/23/2026  01:51 AM               240 values-v18_values-v18.arsc.flat
+09/23/2026  01:51 AM            20,128 values-v21_values-v21.arsc.flat
+09/23/2026  01:51 AM               928 values-v22_values-v22.arsc.flat
+09/23/2026  01:51 AM             5,300 values-v23_values-v23.arsc.flat
+09/23/2026  01:51 AM             3,200 values-v24_values-v24.arsc.flat
+09/23/2026  01:51 AM               576 values-v25_values-v25.arsc.flat
+09/23/2026  01:51 AM             1,048 values-v26_values-v26.arsc.flat
+09/23/2026  01:51 AM             1,952 values-v28_values-v28.arsc.flat
+09/23/2026  01:51 AM               264 values-v30_values-v30.arsc.flat
+09/23/2026  01:51 AM            58,296 values-v31_values-v31.arsc.flat
+09/23/2026  01:51 AM               500 values-v33_values-v33.arsc.flat
+09/23/2026  01:51 AM            10,408 values-v34_values-v34.arsc.flat
+09/23/2026  01:51 AM               600 values-v35_values-v35.arsc.flat
+09/23/2026  01:51 AM            20,108 values-vi_values-vi.arsc.flat
+09/23/2026  01:51 AM               340 values-w320dp-land-v13_values-w320dp-land-v13.arsc.flat
+09/23/2026  01:51 AM               728 values-w360dp-port-v13_values-w360dp-port-v13.arsc.flat
+09/23/2026  01:51 AM               724 values-w400dp-port-v13_values-w400dp-port-v13.arsc.flat
+09/23/2026  01:51 AM               280 values-w600dp-land-v13_values-w600dp-land-v13.arsc.flat
+09/23/2026  01:51 AM               344 values-w600dp-v13_values-w600dp-v13.arsc.flat
+09/23/2026  01:51 AM             1,380 values-watch-v20_values-watch-v20.arsc.flat
+09/23/2026  01:51 AM               896 values-watch-v21_values-watch-v21.arsc.flat
+09/23/2026  01:51 AM               572 values-xlarge-v4_values-xlarge-v4.arsc.flat
+09/23/2026  01:51 AM            19,140 values-zh-rCN_values-zh-rCN.arsc.flat
+09/23/2026  01:51 AM            19,100 values-zh-rHK_values-zh-rHK.arsc.flat
+09/23/2026  01:51 AM            19,188 values-zh-rTW_values-zh-rTW.arsc.flat
+09/23/2026  01:51 AM            19,192 values-zu_values-zu.arsc.flat
+09/23/2026  01:51 AM         1,311,948 values_values.arsc.flat
+09/23/2026  01:51 AM               144 xml_backup_rules.xml.flat
+09/23/2026  01:51 AM               188 xml_data_extraction_rules.xml.flat
+             130 File(s)      3,252,624 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\merged_res_blame_folder
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          debug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\merged_res_blame_folder\debug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          mergeDebugResources
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\merged_res_blame_folder\debug\mergeDebugResources
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          out
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\merged_res_blame_folder\debug\mergeDebugResources\out
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          multi-v2
+09/23/2026  01:51 AM    <DIR>          single
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\merged_res_blame_folder\debug\mergeDebugResources\out\multi-v2
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM         1,816,988 mergeDebugResources.json
+09/23/2026  01:51 AM            17,599 values-af.json
+09/23/2026  01:51 AM            17,542 values-am.json
+09/23/2026  01:51 AM            17,688 values-ar.json
+09/23/2026  01:51 AM            17,618 values-as.json
+09/23/2026  01:51 AM            17,625 values-az.json
+09/23/2026  01:51 AM             2,878 values-b+es+419.json
+09/23/2026  01:51 AM            17,762 values-b+sr+Latn.json
+09/23/2026  01:51 AM            17,641 values-be.json
+09/23/2026  01:51 AM            17,640 values-bg.json
+09/23/2026  01:51 AM            17,639 values-bn.json
+09/23/2026  01:51 AM            17,626 values-bs.json
+09/23/2026  01:51 AM            17,648 values-ca.json
+09/23/2026  01:51 AM            17,634 values-cs.json
+09/23/2026  01:51 AM            17,594 values-da.json
+09/23/2026  01:51 AM            17,638 values-de.json
+09/23/2026  01:51 AM            17,652 values-el.json
+09/23/2026  01:51 AM             9,907 values-en-rAU.json
+09/23/2026  01:51 AM             9,907 values-en-rCA.json
+09/23/2026  01:51 AM            17,665 values-en-rGB.json
+09/23/2026  01:51 AM             9,907 values-en-rIN.json
+09/23/2026  01:51 AM            10,162 values-en-rXC.json
+09/23/2026  01:51 AM            17,717 values-es-rUS.json
+09/23/2026  01:51 AM            17,637 values-es.json
+09/23/2026  01:51 AM            17,614 values-et.json
+09/23/2026  01:51 AM            17,625 values-eu.json
+09/23/2026  01:51 AM            17,600 values-fa.json
+09/23/2026  01:51 AM            17,603 values-fi.json
+09/23/2026  01:51 AM            17,738 values-fr-rCA.json
+09/23/2026  01:51 AM            17,640 values-fr.json
+09/23/2026  01:51 AM            17,646 values-gl.json
+09/23/2026  01:51 AM            17,604 values-gu.json
+09/23/2026  01:51 AM               739 values-h320dp-port-v13.json
+09/23/2026  01:51 AM               719 values-h320dp-v13.json
+09/23/2026  01:51 AM               860 values-h360dp-land-v13.json
+09/23/2026  01:51 AM               860 values-h480dp-land-v13.json
+09/23/2026  01:51 AM               764 values-h480dp-v13.json
+09/23/2026  01:51 AM               739 values-h550dp-port-v13.json
+09/23/2026  01:51 AM               719 values-h720dp-v13.json
+09/23/2026  01:51 AM               749 values-hdpi-v4.json
+09/23/2026  01:51 AM            17,615 values-hi.json
+09/23/2026  01:51 AM            17,614 values-hr.json
+09/23/2026  01:51 AM            17,620 values-hu.json
+09/23/2026  01:51 AM            17,612 values-hy.json
+09/23/2026  01:51 AM            17,604 values-in.json
+09/23/2026  01:51 AM            17,608 values-is.json
+09/23/2026  01:51 AM            17,627 values-it.json
+09/23/2026  01:51 AM            17,584 values-iw.json
+09/23/2026  01:51 AM            17,524 values-ja.json
+09/23/2026  01:51 AM            17,618 values-ka.json
+09/23/2026  01:51 AM            17,618 values-kk.json
+09/23/2026  01:51 AM            17,609 values-km.json
+09/23/2026  01:51 AM            17,628 values-kn.json
+09/23/2026  01:51 AM            17,509 values-ko.json
+09/23/2026  01:51 AM            17,628 values-ky.json
+09/23/2026  01:51 AM             2,413 values-land.json
+09/23/2026  01:51 AM             1,805 values-large-v4.json
+09/23/2026  01:51 AM               716 values-ldltr-v21.json
+09/23/2026  01:51 AM               732 values-ldrtl-v17.json
+09/23/2026  01:51 AM            17,593 values-lo.json
+09/23/2026  01:51 AM            17,648 values-lt.json
+09/23/2026  01:51 AM            17,664 values-lv.json
+09/23/2026  01:51 AM            17,626 values-mk.json
+09/23/2026  01:51 AM            17,654 values-ml.json
+09/23/2026  01:51 AM            17,606 values-mn.json
+09/23/2026  01:51 AM            17,610 values-mr.json
+09/23/2026  01:51 AM            17,625 values-ms.json
+09/23/2026  01:51 AM            17,656 values-my.json
+09/23/2026  01:51 AM            17,587 values-nb.json
+09/23/2026  01:51 AM            17,640 values-ne.json
+09/23/2026  01:51 AM             5,175 values-night-v8.json
+09/23/2026  01:51 AM            17,620 values-nl.json
+09/23/2026  01:51 AM            17,626 values-or.json
+09/23/2026  01:51 AM            17,599 values-pa.json
+09/23/2026  01:51 AM            17,628 values-pl.json
+09/23/2026  01:51 AM               695 values-port.json
+09/23/2026  01:51 AM            17,704 values-pt-rBR.json
+09/23/2026  01:51 AM            17,709 values-pt-rPT.json
+09/23/2026  01:51 AM             9,870 values-pt.json
+09/23/2026  01:51 AM            17,646 values-ro.json
+09/23/2026  01:51 AM            17,633 values-ru.json
+09/23/2026  01:51 AM            17,610 values-si.json
+09/23/2026  01:51 AM            17,629 values-sk.json
+09/23/2026  01:51 AM            17,639 values-sl.json
+09/23/2026  01:51 AM            17,624 values-sq.json
+09/23/2026  01:51 AM            17,619 values-sr.json
+09/23/2026  01:51 AM            17,605 values-sv.json
+09/23/2026  01:51 AM            17,631 values-sw.json
+09/23/2026  01:51 AM             2,134 values-sw600dp-v13.json
+09/23/2026  01:51 AM            17,657 values-ta.json
+09/23/2026  01:51 AM            17,648 values-te.json
+09/23/2026  01:51 AM            17,594 values-th.json
+09/23/2026  01:51 AM            17,639 values-tl.json
+09/23/2026  01:51 AM            17,595 values-tr.json
+09/23/2026  01:51 AM            17,638 values-uk.json
+09/23/2026  01:51 AM            17,613 values-ur.json
+09/23/2026  01:51 AM            17,625 values-uz.json
+09/23/2026  01:51 AM               733 values-v16.json
+09/23/2026  01:51 AM             1,057 values-v17.json
+09/23/2026  01:51 AM               690 values-v18.json
+09/23/2026  01:51 AM             6,648 values-v21.json
+09/23/2026  01:51 AM               785 values-v22.json
+09/23/2026  01:51 AM             3,028 values-v23.json
+09/23/2026  01:51 AM             2,050 values-v24.json
+09/23/2026  01:51 AM               784 values-v25.json
+09/23/2026  01:51 AM               823 values-v26.json
+09/23/2026  01:51 AM             2,568 values-v28.json
+09/23/2026  01:51 AM               693 values-v30.json
+09/23/2026  01:51 AM             5,917 values-v31.json
+09/23/2026  01:51 AM               740 values-v33.json
+09/23/2026  01:51 AM             2,384 values-v34.json
+09/23/2026  01:51 AM               737 values-v35.json
+09/23/2026  01:51 AM            17,610 values-vi.json
+09/23/2026  01:51 AM               754 values-w320dp-land-v13.json
+09/23/2026  01:51 AM               844 values-w360dp-port-v13.json
+09/23/2026  01:51 AM               844 values-w400dp-port-v13.json
+09/23/2026  01:51 AM               739 values-w600dp-land-v13.json
+09/23/2026  01:51 AM               734 values-w600dp-v13.json
+09/23/2026  01:51 AM             2,168 values-watch-v20.json
+09/23/2026  01:51 AM               793 values-watch-v21.json
+09/23/2026  01:51 AM               790 values-xlarge-v4.json
+09/23/2026  01:51 AM            17,579 values-zh-rCN.json
+09/23/2026  01:51 AM            17,582 values-zh-rHK.json
+09/23/2026  01:51 AM            17,577 values-zh-rTW.json
+09/23/2026  01:51 AM            17,637 values-zu.json
+09/23/2026  01:51 AM           301,257 values.json
+             126 File(s)      3,638,076 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\merged_res_blame_folder\debug\mergeDebugResources\out\single
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM             1,273 mergeDebugResources.json
+               1 File(s)          1,273 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\navigation_json
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          debug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\navigation_json\debug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          extractDeepLinksDebug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\navigation_json\debug\extractDeepLinksDebug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM                 2 navigation.json
+               1 File(s)              2 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\nested_resources_validation_report
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          debug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\nested_resources_validation_report\debug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          generateDebugResources
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\nested_resources_validation_report\debug\generateDebugResources
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM                15 nestedResourcesValidationReport.txt
+               1 File(s)             15 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\packaged_manifests
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          debug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\packaged_manifests\debug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          processDebugManifestForPackage
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\packaged_manifests\debug\processDebugManifestForPackage
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM            10,995 AndroidManifest.xml
+09/23/2026  01:51 AM               407 output-metadata.json
+               2 File(s)         11,402 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\packaged_res
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          debug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\packaged_res\debug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          packageDebugResources
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\packaged_res\debug\packageDebugResources
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          layout
+09/23/2026  01:51 AM    <DIR>          values
+09/23/2026  01:51 AM    <DIR>          values-night-v8
+09/23/2026  01:51 AM    <DIR>          xml
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\packaged_res\debug\packageDebugResources\layout
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM             1,086 activity_main.xml
+09/23/2026  01:51 AM             1,211 activity_room_schedule.xml
+09/23/2026  01:51 AM             1,255 activity_set_booking.xml
+               3 File(s)          3,552 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\packaged_res\debug\packageDebugResources\values
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM               963 values.xml
+               1 File(s)            963 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\packaged_res\debug\packageDebugResources\values-night-v8
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM               182 values-night-v8.xml
+               1 File(s)            182 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\packaged_res\debug\packageDebugResources\xml
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM               492 backup_rules.xml
+09/23/2026  01:51 AM               571 data_extraction_rules.xml
+               2 File(s)          1,063 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\project_dex_archive
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          debug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\project_dex_archive\debug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          dexBuilderDebug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\project_dex_archive\debug\dexBuilderDebug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          out
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\project_dex_archive\debug\dexBuilderDebug\out
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM            30,857 0aa341a4460a1b3977ad5ad26a15a86f5fbb52ab0f50b91b450cc531ab5f8061_0.jar
+09/23/2026  01:51 AM           105,856 0aa341a4460a1b3977ad5ad26a15a86f5fbb52ab0f50b91b450cc531ab5f8061_1.jar
+09/23/2026  01:51 AM    <DIR>          com
+               2 File(s)        136,713 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\project_dex_archive\debug\dexBuilderDebug\out\com
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          example
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\project_dex_archive\debug\dexBuilderDebug\out\com\example
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          fcams
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\project_dex_archive\debug\dexBuilderDebug\out\com\example\fcams
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM             4,232 ComposableSingletons$LecturerDashBoardActivityKt.dex
+09/23/2026  01:51 AM             5,216 ComposableSingletons$StudentDashboardActivityKt.dex
+09/23/2026  01:51 AM            23,320 FirebaseRepository.dex
+09/23/2026  01:51 AM             4,172 LecturerDashboardActivity$LecturerDashboardScreen$1$1.dex
+09/23/2026  01:51 AM             2,348 LecturerDashboardActivity$LecturerDashboardScreen$2$1$1$1$1$1$1$1.dex
+09/23/2026  01:51 AM            11,956 LecturerDashboardActivity$LecturerDashboardScreen$2$1$1$1$1.dex
+09/23/2026  01:51 AM             2,288 LecturerDashboardActivity$LecturerDashboardScreen$lambda$9$lambda$8$lambda$7$$inlined$items$default$1.dex
+09/23/2026  01:51 AM             2,400 LecturerDashboardActivity$LecturerDashboardScreen$lambda$9$lambda$8$lambda$7$$inlined$items$default$2.dex
+09/23/2026  01:51 AM             2,412 LecturerDashboardActivity$LecturerDashboardScreen$lambda$9$lambda$8$lambda$7$$inlined$items$default$3.dex
+09/23/2026  01:51 AM             6,116 LecturerDashboardActivity$LecturerDashboardScreen$lambda$9$lambda$8$lambda$7$$inlined$items$default$4.dex
+09/23/2026  01:51 AM            19,672 LecturerDashboardActivity.dex
+09/23/2026  01:51 AM             7,124 MainActivity.dex
+09/23/2026  01:51 AM             3,412 Room.dex
+09/23/2026  01:51 AM             4,256 RoomBooking.dex
+09/23/2026  01:51 AM            14,820 RoomScheduleActivity.dex
+09/23/2026  01:51 AM             5,144 RoomSwapRequest.dex
+09/23/2026  01:51 AM             5,552 SetBookingActivity.dex
+09/23/2026  01:51 AM             4,156 StudentDashboardActivity$StudentDashboardScreen$1$1.dex
+09/23/2026  01:51 AM             2,284 StudentDashboardActivity$StudentDashboardScreen$2$1$1$1$1$1$1$1$1.dex
+09/23/2026  01:51 AM             2,348 StudentDashboardActivity$StudentDashboardScreen$2$1$1$1$1$1$1$2$1.dex
+09/23/2026  01:51 AM            15,428 StudentDashboardActivity$StudentDashboardScreen$2$1$1$1$1.dex
+09/23/2026  01:51 AM             2,284 StudentDashboardActivity$StudentDashboardScreen$lambda$9$lambda$8$lambda$7$$inlined$items$default$1.dex
+09/23/2026  01:51 AM             2,392 StudentDashboardActivity$StudentDashboardScreen$lambda$9$lambda$8$lambda$7$$inlined$items$default$2.dex
+09/23/2026  01:51 AM             2,404 StudentDashboardActivity$StudentDashboardScreen$lambda$9$lambda$8$lambda$7$$inlined$items$default$3.dex
+09/23/2026  01:51 AM             6,100 StudentDashboardActivity$StudentDashboardScreen$lambda$9$lambda$8$lambda$7$$inlined$items$default$4.dex
+09/23/2026  01:51 AM            19,324 StudentDashboardActivity.dex
+              26 File(s)        181,160 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\runtime_symbol_list
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          debug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\runtime_symbol_list\debug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          processDebugResources
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\runtime_symbol_list\debug\processDebugResources
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM           494,375 R.txt
+               1 File(s)        494,375 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\signing_config_versions
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          debug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\signing_config_versions\debug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          writeDebugSigningConfigVersions
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\signing_config_versions\debug\writeDebugSigningConfigVersions
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM                96 signing-config-versions.json
+               1 File(s)             96 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\stable_resource_ids_file
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          debug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\stable_resource_ids_file\debug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          processDebugResources
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\stable_resource_ids_file\debug\processDebugResources
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM           521,339 stableIds.txt
+               1 File(s)        521,339 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\stripped_native_libs
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          debug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\stripped_native_libs\debug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          stripDebugDebugSymbols
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\stripped_native_libs\debug\stripDebugDebugSymbols
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          out
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\stripped_native_libs\debug\stripDebugDebugSymbols\out
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          lib
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\stripped_native_libs\debug\stripDebugDebugSymbols\out\lib
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          arm64-v8a
+09/23/2026  01:51 AM    <DIR>          armeabi-v7a
+09/23/2026  01:51 AM    <DIR>          x86
+09/23/2026  01:51 AM    <DIR>          x86_64
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\stripped_native_libs\debug\stripDebugDebugSymbols\out\lib\arm64-v8a
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM            10,096 libandroidx.graphics.path.so
+09/23/2026  01:51 AM             7,112 libdatastore_shared_counter.so
+               2 File(s)         17,208 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\stripped_native_libs\debug\stripDebugDebugSymbols\out\lib\armeabi-v7a
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM             7,252 libandroidx.graphics.path.so
+09/23/2026  01:51 AM             4,416 libdatastore_shared_counter.so
+               2 File(s)         11,668 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\stripped_native_libs\debug\stripDebugDebugSymbols\out\lib\x86
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM             9,284 libandroidx.graphics.path.so
+09/23/2026  01:51 AM             5,148 libdatastore_shared_counter.so
+               2 File(s)         14,432 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\stripped_native_libs\debug\stripDebugDebugSymbols\out\lib\x86_64
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM            10,760 libandroidx.graphics.path.so
+09/23/2026  01:51 AM             6,224 libdatastore_shared_counter.so
+               2 File(s)         16,984 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\symbol_list_with_package_name
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          debug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\symbol_list_with_package_name\debug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          generateDebugRFile
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\intermediates\symbol_list_with_package_name\debug\generateDebugRFile
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM               567 package-aware-r.txt
+               1 File(s)            567 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\kotlin
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          compileDebugKotlin
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\kotlin\compileDebugKotlin
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          cacheable
+09/23/2026  01:51 AM    <DIR>          classpath-snapshot
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\kotlin\compileDebugKotlin\cacheable
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          caches-jvm
+09/23/2026  01:51 AM                18 last-build.bin
+               1 File(s)             18 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\kotlin\compileDebugKotlin\cacheable\caches-jvm
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          inputs
+09/23/2026  01:51 AM    <DIR>          jvm
+09/23/2026  01:51 AM    <DIR>          lookups
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\kotlin\compileDebugKotlin\cacheable\caches-jvm\inputs
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM             4,096 source-to-output.tab
+09/23/2026  01:51 AM             4,096 source-to-output.tab.keystream
+09/23/2026  01:51 AM                 8 source-to-output.tab.keystream.len
+09/23/2026  01:51 AM                 8 source-to-output.tab.len
+09/23/2026  01:51 AM            31,237 source-to-output.tab.values.at
+09/23/2026  01:51 AM            32,768 source-to-output.tab_i
+09/23/2026  01:51 AM                 8 source-to-output.tab_i.len
+               7 File(s)         72,221 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\kotlin\compileDebugKotlin\cacheable\caches-jvm\jvm
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          kotlin
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\kotlin\compileDebugKotlin\cacheable\caches-jvm\jvm\kotlin
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM             4,096 class-attributes.tab
+09/23/2026  01:51 AM             4,096 class-attributes.tab.keystream
+09/23/2026  01:51 AM                 8 class-attributes.tab.keystream.len
+09/23/2026  01:51 AM                 8 class-attributes.tab.len
+09/23/2026  01:51 AM               145 class-attributes.tab.values.at
+09/23/2026  01:51 AM            32,768 class-attributes.tab_i
+09/23/2026  01:51 AM                 8 class-attributes.tab_i.len
+09/23/2026  01:51 AM             4,096 class-fq-name-to-source.tab
+09/23/2026  01:51 AM             4,096 class-fq-name-to-source.tab.keystream
+09/23/2026  01:51 AM                 8 class-fq-name-to-source.tab.keystream.len
+09/23/2026  01:51 AM                 8 class-fq-name-to-source.tab.len
+09/23/2026  01:51 AM             3,927 class-fq-name-to-source.tab.values.at
+09/23/2026  01:51 AM            32,768 class-fq-name-to-source.tab_i
+09/23/2026  01:51 AM                 8 class-fq-name-to-source.tab_i.len
+09/23/2026  01:51 AM             4,096 internal-name-to-source.tab
+09/23/2026  01:51 AM             8,192 internal-name-to-source.tab.keystream
+09/23/2026  01:51 AM                 8 internal-name-to-source.tab.keystream.len
+09/23/2026  01:51 AM                 8 internal-name-to-source.tab.len
+09/23/2026  01:51 AM            11,071 internal-name-to-source.tab.values.at
+09/23/2026  01:51 AM            32,768 internal-name-to-source.tab_i
+09/23/2026  01:51 AM                 8 internal-name-to-source.tab_i.len
+09/23/2026  01:51 AM             4,096 proto.tab
+09/23/2026  01:51 AM             4,096 proto.tab.keystream
+09/23/2026  01:51 AM                 8 proto.tab.keystream.len
+09/23/2026  01:51 AM                 8 proto.tab.len
+09/23/2026  01:51 AM            23,742 proto.tab.values.at
+09/23/2026  01:51 AM            32,768 proto.tab_i
+09/23/2026  01:51 AM                 8 proto.tab_i.len
+09/23/2026  01:51 AM             4,096 source-to-classes.tab
+09/23/2026  01:51 AM             4,096 source-to-classes.tab.keystream
+09/23/2026  01:51 AM                 8 source-to-classes.tab.keystream.len
+09/23/2026  01:51 AM                 8 source-to-classes.tab.len
+09/23/2026  01:51 AM            14,308 source-to-classes.tab.values.at
+09/23/2026  01:51 AM            32,768 source-to-classes.tab_i
+09/23/2026  01:51 AM                 8 source-to-classes.tab_i.len
+09/23/2026  01:51 AM             4,096 subtypes.tab
+09/23/2026  01:51 AM             4,096 subtypes.tab.keystream
+09/23/2026  01:51 AM                 8 subtypes.tab.keystream.len
+09/23/2026  01:51 AM                 8 subtypes.tab.len
+09/23/2026  01:51 AM               755 subtypes.tab.values.at
+09/23/2026  01:51 AM            32,768 subtypes.tab_i
+09/23/2026  01:51 AM                 8 subtypes.tab_i.len
+09/23/2026  01:51 AM             4,096 supertypes.tab
+09/23/2026  01:51 AM             4,096 supertypes.tab.keystream
+09/23/2026  01:51 AM                 8 supertypes.tab.keystream.len
+09/23/2026  01:51 AM                 8 supertypes.tab.len
+09/23/2026  01:51 AM               745 supertypes.tab.values.at
+09/23/2026  01:51 AM            32,768 supertypes.tab_i
+09/23/2026  01:51 AM                 8 supertypes.tab_i.len
+              49 File(s)        345,677 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\kotlin\compileDebugKotlin\cacheable\caches-jvm\lookups
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM                 5 counters.tab
+09/23/2026  01:51 AM             4,096 file-to-id.tab
+09/23/2026  01:51 AM             4,096 file-to-id.tab.keystream
+09/23/2026  01:51 AM                 8 file-to-id.tab.keystream.len
+09/23/2026  01:51 AM                 8 file-to-id.tab.len
+09/23/2026  01:51 AM               241 file-to-id.tab.values.at
+09/23/2026  01:51 AM            32,768 file-to-id.tab_i
+09/23/2026  01:51 AM                 8 file-to-id.tab_i.len
+09/23/2026  01:51 AM             4,096 id-to-file.tab
+09/23/2026  01:51 AM             4,096 id-to-file.tab.keystream
+09/23/2026  01:51 AM                 8 id-to-file.tab.keystream.len
+09/23/2026  01:51 AM                 8 id-to-file.tab.len
+09/23/2026  01:51 AM             1,988 id-to-file.tab.values.at
+09/23/2026  01:51 AM            32,768 id-to-file.tab_i
+09/23/2026  01:51 AM                 8 id-to-file.tab_i.len
+09/23/2026  01:51 AM            16,384 lookups.tab
+09/23/2026  01:51 AM            61,440 lookups.tab.keystream
+09/23/2026  01:51 AM                 8 lookups.tab.keystream.len
+09/23/2026  01:51 AM                 8 lookups.tab.len
+09/23/2026  01:51 AM            72,452 lookups.tab.values
+09/23/2026  01:51 AM            32,534 lookups.tab.values.at
+09/23/2026  01:51 AM                22 lookups.tab.values.s
+09/23/2026  01:51 AM            32,768 lookups.tab_i
+09/23/2026  01:51 AM                 8 lookups.tab_i.len
+              24 File(s)        299,826 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\kotlin\compileDebugKotlin\classpath-snapshot
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM            65,001 shrunk-classpath-snapshot.bin
+               1 File(s)         65,001 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\outputs
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          apk
+09/23/2026  01:51 AM    <DIR>          logs
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\outputs\apk
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          debug
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\outputs\apk\debug
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM        48,974,175 app-debug.apk
+09/23/2026  01:51 AM               419 output-metadata.json
+               2 File(s)     48,974,594 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\build\outputs\logs
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM           145,874 manifest-merger-debug-report.txt
+               1 File(s)        145,874 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\src
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          androidTest
+09/23/2026  01:51 AM    <DIR>          main
+09/23/2026  01:51 AM    <DIR>          test
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\src\androidTest
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          java
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\src\androidTest\java
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          com
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\src\androidTest\java\com
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          example
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\src\androidTest\java\com\example
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          fcams
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\src\androidTest\java\com\example\fcams
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM               684 ExampleInstrumentedTest.kt
+               1 File(s)            684 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\src\main
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM             1,457 AndroidManifest.xml
+09/23/2026  01:51 AM    <DIR>          java
+09/23/2026  01:51 AM    <DIR>          res
+               1 File(s)          1,457 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\src\main\java
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          com
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\src\main\java\com
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          example
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\src\main\java\com\example
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          fcams
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\src\main\java\com\example\fcams
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM             8,469 FirebaseRepository.kt
+09/23/2026  01:51 AM             3,588 LecturerDashBoardActivity.kt
+09/23/2026  01:51 AM             2,918 MainActivity.kt
+09/23/2026  01:51 AM               141 Room.kt
+09/23/2026  01:51 AM               248 RoomBooking.kt
+09/23/2026  01:51 AM             4,661 RoomScheduleActivity.kt
+09/23/2026  01:51 AM               350 RoomSwapRequest.kt
+09/23/2026  01:51 AM             1,843 setBookingActivity.kt
+09/23/2026  01:51 AM             4,254 StudentDashboardActivity.kt
+               9 File(s)         26,472 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\src\main\res
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          layout
+09/23/2026  01:51 AM    <DIR>          values
+09/23/2026  01:51 AM    <DIR>          values-night
+09/23/2026  01:51 AM    <DIR>          xml
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\src\main\res\layout
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM             1,086 activity_main.xml
+09/23/2026  01:51 AM             1,211 activity_room_schedule.xml
+09/23/2026  01:51 AM             1,255 activity_set_booking.xml
+               3 File(s)          3,552 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\src\main\res\values
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM               151 colors.xml
+09/23/2026  01:51 AM                69 strings.xml
+09/23/2026  01:51 AM               394 themes.xml
+               3 File(s)            614 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\src\main\res\values-night
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM               331 themes.xml
+               1 File(s)            331 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\src\main\res\xml
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM               492 backup_rules.xml
+09/23/2026  01:51 AM               571 data_extraction_rules.xml
+               2 File(s)          1,063 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\src\test
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          java
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\src\test\java
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          com
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\src\test\java\com
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          example
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\src\test\java\com\example
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          fcams
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\app\src\test\java\com\example\fcams
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM               357 ExampleUnitTest.kt
+               1 File(s)            357 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\gradle
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM    <DIR>          wrapper
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Kevin PALA\Desktop\mc216(1)\fcams\gradle\wrapper
+
+09/23/2026  01:51 AM    <DIR>          .
+09/23/2026  01:51 AM    <DIR>          ..
+09/23/2026  01:51 AM            48,966 gradle-wrapper.jar
+09/23/2026  01:51 AM               347 gradle-wrapper.properties
+               2 File(s)         49,313 bytes
+
+     Total Files Listed:
+             727 File(s)    207,414,746 bytes
+             673 Dir(s)  84,036,329,472 bytes free
+
+C:\Users\Kevin PALA\Desktop\mc216(1)\fcams>^A
+
+C:\Users\Kevin PALA\Desktop\mc216(1)\fcams>
