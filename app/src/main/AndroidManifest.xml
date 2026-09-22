@@ -23,10 +23,14 @@
                 android:name=".StudentDashboardActivity"
                 android:exported="false" />
 
-        <!-- ADD THIS LINE BELOW -->
+        
         <activity
                 android:name=".SetBookingActivity"
                 android:exported="false" />
+
+        <activity
+            android:name=".RoomScheduleActivity"
+            android:exported="false"/>
 
     </application>
 
