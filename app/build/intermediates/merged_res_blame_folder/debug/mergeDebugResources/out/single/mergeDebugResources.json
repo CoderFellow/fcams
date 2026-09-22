@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "com.example.fcams.app-debug-68:/layout_activity_room_schedule.xml.flat",
+        "source": "com.example.fcams.app-main-70:/layout/activity_room_schedule.xml"
+    },
+    {
+        "merged": "C:\\Users\\Carlos\\.gradle\\daemon\\9.4.1\\com.example.fcams.app-debug-68:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\Carlos\\.gradle\\daemon\\9.4.1\\com.example.fcams.app-main-70:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\Carlos\\.gradle\\daemon\\9.4.1\\com.example.fcams.app-debug-68:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\Carlos\\.gradle\\daemon\\9.4.1\\com.example.fcams.app-main-70:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\Carlos\\.gradle\\daemon\\9.4.1\\com.example.fcams.app-debug-68:\\layout_activity_set_booking.xml.flat",
+        "source": "C:\\Users\\Carlos\\.gradle\\daemon\\9.4.1\\com.example.fcams.app-main-70:\\layout\\activity_set_booking.xml"
+    },
+    {
+        "merged": "C:\\Users\\Carlos\\.gradle\\daemon\\9.4.1\\com.example.fcams.app-debug-68:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\Carlos\\.gradle\\daemon\\9.4.1\\com.example.fcams.app-main-70:\\layout\\activity_main.xml"
+    }
+]

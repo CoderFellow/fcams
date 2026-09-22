@@ -1,0 +1,28 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color white
+id btnConfirmBooking
+id btnLogin
+id calendarView
+id etDateTimeInput
+id etEmail
+id etPassword
+id lvBookedSlots
+id main
+id tvScheduleRoomTitle
+id tvSelectedRoomTitle
+layout activity_main
+layout activity_room_schedule
+layout activity_set_booking
+string app_name
+string gcm_defaultSenderId
+string google_api_key
+string google_app_id
+string google_crash_reporting_api_key
+string google_storage_bucket
+string project_id
+style Base.Theme.Fcams
+style Theme.Fcams
+xml backup_rules
+xml data_extraction_rules
