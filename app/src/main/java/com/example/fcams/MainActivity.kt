@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
                                 // Route student users to the student dashboard
                                 "student" -> {
                                     Toast.makeText(this, "Welcome Student!", Toast.LENGTH_SHORT).show()
-                                    val intent = Intent(this, StudentDashboardActivity::class.java)
+                                    val intent = Intent(this, UserDashboardActivity::class.java)
                                     startActivity(intent)
                                     finish()
                                 }
@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity() {
                                 // Route lecturer users to the lecturer dashboard
                                 "lecturer" -> {
                                     Toast.makeText(this, "Welcome Lecturer!", Toast.LENGTH_SHORT).show()
-                                    val intent = Intent(this, LecturerDashboardActivity::class.java)
+                                    val intent = Intent(this, UserDashboardActivity::class.java)
                                     startActivity(intent)
                                     finish()
                                 }
