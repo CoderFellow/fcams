@@ -19,7 +19,7 @@ import com.google.firebase.auth.FirebaseAuth
 
 class UserDashboardActivity: ComponentActivity() {
     /*
-    The unified user profile and dashboard page.
+    The unified user profile and dashboard page mapped to real Firebase data.
     */
     private val firebaseRepo = FirebaseRepository()
 
@@ -41,20 +41,22 @@ class UserDashboardActivity: ComponentActivity() {
         val currentUserEmail = FirebaseAuth.getInstance().currentUser?.email ?: "User"
 
         // State variables for data tracking
-        var roomList by remember { mutableStateOf<List<Room>>(emptyList()) }
-        var userRole by remember { mutableStateOf<String>("student") } // Default to student, fetch later if needed
+        var userRole by remember { mutableStateOf("student") }
+        var userBookings by remember { mutableStateOf<List<RoomBooking>>(emptyList()) }
+        var loadingBookings by remember { mutableStateOf(true) }
 
-        // Fetch room data and user role when the screen loads
+        // Fetch data when the screen loads
         LaunchedEffect(Unit) {
-            firebaseRepo.getRooms { rooms ->
-                roomList = rooms
-            }
             firebaseRepo.fetchUserRole(currentUserEmail) { role ->
                 if (role != null) userRole = role
             }
+            
+            firebaseRepo.getUserBookings { bookings ->
+                userBookings = bookings
+                loadingBookings = false
+            }
         }
 
-        // Main layout container following your wireframe structure
         Column(modifier = Modifier.fillMaxSize().padding(16.dp)) {
             
             // --- 1. TOP HEADER: Profile Picture & Settings ---
@@ -62,30 +64,43 @@ class UserDashboardActivity: ComponentActivity() {
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                // Profile Picture Placeholder
-                Button(onClick = { /* TODO: Open profile settings */ }) {
+                Button(onClick = { Toast.makeText(context, "Profile clicked", Toast.LENGTH_SHORT).show() }) {
                     Text("Profile")
                 }
-                // Settings Button
-                Button(onClick = { /* TODO: Open app settings */ }) {
+                Button(onClick = { Toast.makeText(context, "Settings clicked", Toast.LENGTH_SHORT).show() }) {
                     Text("⚙")
                 }
             }
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // --- 2. QUICK ACTION BUTTONS (Book Room, Booked Rooms, Swap Requests) ---
+            // --- 2. QUICK ACTION BUTTONS ---
             Row(
                 modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(8.dp) //  Fixed typo here
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                Button(onClick = { /* TODO: Navigate to booking */ }, modifier = Modifier.weight(1f)) {
+                // Book Room hooks into StudentDashboard to leverage existing booking flows
+                Button(
+                    onClick = { 
+                        val intent = Intent(context, StudentDashboardActivity::class.java)
+                        context.startActivity(intent)
+                    }, 
+                    modifier = Modifier.weight(1f)
+                ) {
                     Text("Book Room", fontSize = 12.sp)
                 }
-                Button(onClick = { /* TODO: View booked rooms */ }, modifier = Modifier.weight(1f)) {
+                
+                Button(
+                    onClick = { Toast.makeText(context, "Scrolling to Bookings Below", Toast.LENGTH_SHORT).show() }, 
+                    modifier = Modifier.weight(1f)
+                ) {
                     Text("Booked Rooms", fontSize = 12.sp)
                 }
-                Button(onClick = { /* TODO: View swap requests */ }, modifier = Modifier.weight(1f)) {
+                
+                Button(
+                    onClick = { Toast.makeText(context, "Scrolling to Swaps Below", Toast.LENGTH_SHORT).show() }, 
+                    modifier = Modifier.weight(1f)
+                ) {
                     Text("Swap Requests", fontSize = 12.sp)
                 }
             }
@@ -93,34 +108,45 @@ class UserDashboardActivity: ComponentActivity() {
             Spacer(modifier = Modifier.height(16.dp))
 
             // --- 3. SCROLLABLE CONTENT SECTIONS ---
-            LazyColumn(modifier = Modifier.fillMaxSize()) {
+            LazyColumn(modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.spacedBy(12.dp)) {
                 
-                // Notifications Section
+                // Booked Rooms Section Title
                 item {
-                    Card(modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)) {
-                        Column(modifier = Modifier.padding(12.dp)) {
-                            Text("Notifications", fontWeight = FontWeight.Bold)
-                            Text("No new notifications.", fontSize = 14.sp)
+                    Text("Your Active Reservations", fontWeight = FontWeight.Bold, fontSize = 18.sp)
+                }
+
+                // Render active user bookings dynamically from database
+                if (loadingBookings) {
+                    item { CircularProgressIndicator(modifier = Modifier.padding(16.dp)) }
+                } else if (userBookings.isEmpty()) {
+                    item {
+                        Card(modifier = Modifier.fillMaxWidth()) {
+                            Text("No active room reservations found.", modifier = Modifier.padding(16.dp), fontSize = 14.sp)
+                        }
+                    }
+                } else {
+                    items(userBookings) { booking ->
+                        Card(modifier = Modifier.fillMaxWidth()) {
+                            Column(modifier = Modifier.padding(12.dp)) {
+                                Text("Room ID: ${booking.roomID}", fontWeight = FontWeight.SemiBold)
+                                Text("Scheduled: ${booking.timeDate}", fontSize = 14.sp)
+                                Text("Status: ${booking.status}", color = MaterialTheme.colorScheme.primary, fontSize = 12.sp)
+                            }
                         }
                     }
                 }
 
-                // Booked Rooms Section Summary
+                // Swap Requests Section Title
                 item {
-                    Card(modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)) {
-                        Column(modifier = Modifier.padding(12.dp)) {
-                            Text("Your Booked Rooms", fontWeight = FontWeight.Bold)
-                            Text("Check your active reservations here.", fontSize = 14.sp)
-                        }
-                    }
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Text("Swap Requests (Incoming / Outgoing)", fontWeight = FontWeight.Bold, fontSize = 18.sp)
                 }
 
-                // Swap Requests Section
+                // Swap Requests Section Container Placeholder
                 item {
-                    Card(modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)) {
+                    Card(modifier = Modifier.fillMaxWidth()) {
                         Column(modifier = Modifier.padding(12.dp)) {
-                            Text("Swap Requests (Incoming / Outgoing)", fontWeight = FontWeight.Bold)
-                            Text("No pending swaps.", fontSize = 14.sp)
+                            Text("To manage swaps, select a room via the 'Book Room' menu to open its master schedule, then tap an occupied slot to trade.", fontSize = 14.sp)
                         }
                     }
                 }
@@ -128,18 +154,19 @@ class UserDashboardActivity: ComponentActivity() {
                 // --- 4. LECTURERS & STAFF ONLY SECTION ---
                 if (userRole == "lecturer" || userRole == "staff") {
                     item {
-                        Spacer(modifier = Modifier.height(16.dp))
-                        HorizontalDivider(thickness = 2.dp) // Note: Material 3 uses HorizontalDivider instead of Divider
+                        Spacer(modifier = Modifier.height(8.dp))
+                        HorizontalDivider(thickness = 2.dp)
                         Text(
-                            text = "Lecturers and other staff only.",
+                            text = "Lecturers and Staff Administration Tools",
                             color = MaterialTheme.colorScheme.error,
-                            fontSize = 12.sp,
+                            fontSize = 14.sp,
+                            fontWeight = FontWeight.Bold,
                             modifier = Modifier.padding(vertical = 8.dp)
                         )
                     }
 
                     item {
-                        Card(modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)) {
+                        Card(modifier = Modifier.fillMaxWidth()) {
                             Column(modifier = Modifier.padding(12.dp)) {
                                 Text("Room Reports", fontWeight = FontWeight.Bold)
                                 Text("Inspect overall room analytics and statistics.", fontSize = 14.sp)
@@ -148,7 +175,7 @@ class UserDashboardActivity: ComponentActivity() {
                     }
 
                     item {
-                        Card(modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)) {
+                        Card(modifier = Modifier.fillMaxWidth()) {
                             Column(modifier = Modifier.padding(12.dp)) {
                                 Text("Room Logs", fontWeight = FontWeight.Bold)
                                 Text("View historical system audit logs.", fontSize = 14.sp)
