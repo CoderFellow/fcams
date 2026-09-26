@@ -7,6 +7,7 @@ class FirebaseRepository {
     val auth: FirebaseAuth = FirebaseAuth.getInstance()
     val db: FirebaseFirestore = FirebaseFirestore.getInstance()
 
+    /* Authenticates users using their email address and password, returning success or error messages via a callback.*/
     fun loginUser(email: String, pass: String, onResult: (Boolean, String?) -> Unit) {
         auth.signInWithEmailAndPassword(email, pass)
             .addOnCompleteListener { task ->
@@ -18,6 +19,7 @@ class FirebaseRepository {
             }
     }
 
+    /* Queries the Firestore users collection by email to retrieve a user's role (e.g., admin, student, staff).*/
     fun fetchUserRole(email: String, onRoleFetched: (String?) -> Unit) {
         db.collection("users")
             .whereEqualTo("email", email)
@@ -36,6 +38,7 @@ class FirebaseRepository {
             }
     }
 
+    /* Retrieves a list of all available rooms from the rooms collection.*/
     fun getRooms(onRoomsFetched: (List<Room>) -> Unit) {
         db.collection("rooms")
             .get()
@@ -48,6 +51,8 @@ class FirebaseRepository {
             }
     }
 
+    /* Checks for scheduling conflicts first, and if clear, generates a unique booking 
+    ID and saves a new booking object with a "Pending" status to the roomBookings collection.*/
     fun bookRoom(roomID: String, userId: String, timeDate: String, onResult: (Boolean, String) -> Unit) {
         // 1. Check for conflicts first
         checkBookingConflict(roomID, timeDate) { hasConflict ->
@@ -78,6 +83,8 @@ class FirebaseRepository {
         }
     }
 
+    /*Queries active bookings in the roomBookings collection for a specific 
+    room and time slot to prevent double-booking.*/
     fun checkBookingConflict(roomID: String, selectedDateTime: String, onResult: (Boolean) -> Unit) {
         /*
         queries active bookings for a specific room and checks if the chosen slot overlaps
@@ -98,6 +105,8 @@ class FirebaseRepository {
         }
     }
 
+    /*Fetches all bookings tied to a specific room ID or retrieves 
+    bookings belonging to the currently signed-in user.*/
     fun getBookingsForRoom(roomID: String, onResult: (List<RoomBooking>) -> Unit) {
     db.collection("roomBookings")
         .whereEqualTo("roomID", roomID)
@@ -111,7 +120,6 @@ class FirebaseRepository {
         }
     }
 
-    //---------------------------------------------
 
     // 1. Request a Swap with time verification
     fun requestSwap(requesterBookingID: String, targetBookingID: String, onResult: (Boolean, String) -> Unit) {
@@ -178,6 +186,8 @@ class FirebaseRepository {
         }
     }
     
+    /*Fetches all bookings tied to a specific room ID or retrieves 
+    bookings belonging to the currently signed-in user.*/
     fun getUserBookings(onResult: (List<RoomBooking>) -> Unit) {
         val currentEmail = auth.currentUser?.email 
         if (currentEmail == null) {
