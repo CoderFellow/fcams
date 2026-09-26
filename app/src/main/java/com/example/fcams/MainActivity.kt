@@ -23,11 +23,10 @@ class MainActivity : AppCompatActivity() {
     responsible for setting up the UI and user interaction logic.
     */
 
-        // 
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        // The activity starts, configures itself to look modern with edge-to-edge
+        /* The activity starts, configures itself to look modern with edge-to-edge
          window framing, and loads the user interface*/
         setContentView(R.layout.activity_main)
 
@@ -46,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         // Set a click listener to handle login events when the button is tapped
         btnLogin.setOnClickListener {
 
-            Extract and clean input text from the text fields
+            // Extract and clean input text from the text fields
             val email = etEmail.text.toString().trim()
             val pass = etPassword.text.toString().trim()
 

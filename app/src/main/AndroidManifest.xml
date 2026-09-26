@@ -40,6 +40,11 @@
             android:name=".RoomSwapRequest"
             android:exported="false"/>
         
+        <activity
+            android:name=".UserDashboardActivity"
+            android:exported="false">
+        </activity>
+        
     </application>
 
 </manifest>

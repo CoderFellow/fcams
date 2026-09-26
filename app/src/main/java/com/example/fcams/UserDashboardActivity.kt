@@ -77,7 +77,7 @@ class UserDashboardActivity: ComponentActivity() {
             // --- 2. QUICK ACTION BUTTONS (Book Room, Booked Rooms, Swap Requests) ---
             Row(
                 modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBy(8.dp)
+                horizontalArrangement = Arrangement.spacedBy(8.dp) //  Fixed typo here
             ) {
                 Button(onClick = { /* TODO: Navigate to booking */ }, modifier = Modifier.weight(1f)) {
                     Text("Book Room", fontSize = 12.sp)
@@ -129,7 +129,7 @@ class UserDashboardActivity: ComponentActivity() {
                 if (userRole == "lecturer" || userRole == "staff") {
                     item {
                         Spacer(modifier = Modifier.height(16.dp))
-                        Divider(thickness = 2.dp)
+                        HorizontalDivider(thickness = 2.dp) // Note: Material 3 uses HorizontalDivider instead of Divider
                         Text(
                             text = "Lecturers and other staff only.",
                             color = MaterialTheme.colorScheme.error,
