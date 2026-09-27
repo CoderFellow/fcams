@@ -5,12 +5,17 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -18,17 +23,15 @@ import androidx.compose.ui.unit.sp
 import com.google.firebase.auth.FirebaseAuth
 
 class UserDashboardActivity : ComponentActivity() {
-    /*
-    The unified user profile and dashboard page.
-    */
     private val firebaseRepo = FirebaseRepository()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            // Apply professional light color background token[cite: 1]
             Surface(
                 modifier = Modifier.fillMaxSize(),
-                color = MaterialTheme.colorScheme.background
+                color = Color(0xFFF8F9FA)
             ) {
                 UserDashboardScreen()
             }
@@ -38,9 +41,9 @@ class UserDashboardActivity : ComponentActivity() {
     @Composable
     fun UserDashboardScreen() {
         val context = LocalContext.current
-        val currentUserEmail = FirebaseAuth.getInstance().currentUser?.email ?: "User"
+        val currentUserEmail = FirebaseAuth.getInstance().currentUser?.email ?: "student@fcams.edu"
 
-        // State variables explicitly using 'by remember' to maintain scope throughout sub-blocks
+        // State variables explicitly using 'by remember' to maintain scope throughout sub-blocks[cite: 1]
         var userRole by remember { mutableStateOf("student") } 
         var userBookings by remember { mutableStateOf<List<RoomBooking>>(emptyList()) }
         var swapList by remember { mutableStateOf<List<RoomSwapRequest>>(emptyList()) }
@@ -48,7 +51,7 @@ class UserDashboardActivity : ComponentActivity() {
         var loadingBookings by remember { mutableStateOf(true) }
         var loadingSwaps by remember { mutableStateOf(true) }
 
-        // Fetch data when screen loads
+        // Fetch data when screen loads[cite: 1]
         LaunchedEffect(Unit) {
             firebaseRepo.fetchUserRole(currentUserEmail) { role ->
                 if (role != null) userRole = role
@@ -63,163 +66,335 @@ class UserDashboardActivity : ComponentActivity() {
             }
         }
 
-        // Main layout container
-        Column(modifier = Modifier.fillMaxSize().padding(16.dp)) {
+        // Core Brand Layout Wrapper Stack[cite: 1]
+        Box(modifier = Modifier.fillMaxSize()) {
             
-            // --- 1. TOP HEADER ---
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween
-            ) {
-                Button(onClick = { Toast.makeText(context, "Profile", Toast.LENGTH_SHORT).show() }) {
-                    Text("Profile")
-                }
-                Button(onClick = { Toast.makeText(context, "Settings", Toast.LENGTH_SHORT).show() }) {
-                    Text("⚙")
-                }
-            }
-
-            Spacer(modifier = Modifier.height(16.dp))
-
-            // --- 2. QUICK ACTION BUTTONS ---
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(8.dp)
-            ) {
-                Button(
-                    onClick = { 
-                        val intent = Intent(context, StudentDashboardActivity::class.java)
-                        context.startActivity(intent)
-                    }, 
-                    modifier = Modifier.weight(1f)
-                ) {
-                    Text("Book Room", fontSize = 12.sp)
-                }
-                Button(onClick = { Toast.makeText(context, "Showing reservations below", Toast.LENGTH_SHORT).show() }, modifier = Modifier.weight(1f)) {
-                    Text("Booked Rooms", fontSize = 12.sp)
-                }
-                Button(onClick = { Toast.makeText(context, "Showing swaps below", Toast.LENGTH_SHORT).show() }, modifier = Modifier.weight(1f)) {
-                    Text("Swap Requests", fontSize = 12.sp)
-                }
-            }
-
-            Spacer(modifier = Modifier.height(16.dp))
-
-            // --- 3. SCROLLABLE CONTENT SECTIONS ---
-            LazyColumn(
-                modifier = Modifier.fillMaxSize(),
-                verticalArrangement = Arrangement.spacedBy(12.dp)
+            // Functional Content Overlay[cite: 1]
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(horizontal = 20.dp, vertical = 16.dp)
             ) {
                 
-                // Reservations Section Header
-                item {
-                    Text("Your Active Reservations", fontWeight = FontWeight.Bold, fontSize = 18.sp)
+                // --- 1. PREMIUM BRAND HEADLINE BAR ---
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(bottom = 16.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Column {
+                        Text(
+                            text = "LAB 4O workspace",
+                            fontSize = 12.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = Color(0xFFD32F2F) // Crimson signature[cite: 1]
+                        )
+                        Text(
+                            text = "User Dashboard",
+                            fontSize = 22.sp,
+                            fontWeight = FontWeight.ExtraBold,
+                            color = Color(0xFF1A1A1A)
+                        )
+                    }
+                    // Minimalistic Profile Node Indicator[cite: 1]
+                    Box(
+                        modifier = Modifier
+                            .size(40.dp)
+                            .background(Color(0xFF1A1A1A), shape = RoundedCornerShape(10.dp)),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text("U", color = Color.White, fontWeight = FontWeight.Bold)
+                    }
                 }
 
-                if (loadingBookings) {
-                    item { CircularProgressIndicator(modifier = Modifier.padding(16.dp)) }
-                } else if (userBookings.isEmpty()) {
-                    item {
-                        Card(modifier = Modifier.fillMaxWidth()) {
-                            Text("No active room reservations found.", modifier = Modifier.padding(16.dp), fontSize = 14.sp)
-                        }
+                // --- 2. HIGH EFFICIENCY QUICK ACTION ACTIONS ---
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(bottom = 20.dp),
+                    horizontalArrangement = Arrangement.spacedBy(10.dp)
+                ) {
+                    Button(
+                        onClick = { 
+                            val intent = Intent(context, StudentDashboardActivity::class.java)
+                            context.startActivity(intent)
+                        },
+                        shape = RoundedCornerShape(8.dp),
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFD32F2F)),
+                        modifier = Modifier
+                            .weight(1f)
+                            .height(46.dp)
+                    ) {
+                        Text("Book Room", fontSize = 13.sp, fontWeight = FontWeight.Bold)
                     }
-                } else {
-                    items(userBookings) { booking ->
-                        Card(modifier = Modifier.fillMaxWidth()) {
-                            Column(modifier = Modifier.padding(12.dp)) {
-                                Text("Room ID: ${booking.roomID}", fontWeight = FontWeight.SemiBold)
-                                Text("Scheduled: ${booking.timeDate}", fontSize = 14.sp)
-                                Text("Status: ${booking.status}", color = MaterialTheme.colorScheme.primary, fontSize = 12.sp)
+                    
+                    OutlinedButton(
+                        onClick = { Toast.makeText(context, "Showing active reservations below", Toast.LENGTH_SHORT).show() },
+                        shape = RoundedCornerShape(8.dp),
+                        colors = ButtonDefaults.outlinedButtonColors(contentColor = Color(0xFF1A1A1A)),
+                        modifier = Modifier
+                            .weight(1f)
+                            .height(46.dp)
+                            .border(1.dp, Color(0xFFE0E0E2), RoundedCornerShape(8.dp))
+                    ) {
+                        Text("My Schedule", fontSize = 13.sp, fontWeight = FontWeight.SemiBold)
+                    }
+                }
+
+                // --- 3. SCROLLABLE CONTENT SECTIONS ---
+                LazyColumn(
+                    verticalArrangement = Arrangement.spacedBy(12.dp),
+                    modifier = Modifier.fillMaxSize()
+                ) {
+                    
+                    // Reservations Section Header
+                    item {
+                        Text(
+                            "Your Active Reservations",
+                            fontSize = 14.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = Color.Gray
+                        )
+                    }
+
+                    if (loadingBookings) {
+                        item {
+                            Box(
+                                modifier = Modifier.fillMaxWidth().padding(16.dp),
+                                contentAlignment = Alignment.Center
+                            ) {
+                                CircularProgressIndicator(color = Color(0xFFD32F2F))
+                            }
+                        }
+                    } else if (userBookings.isEmpty()) {
+                        item {
+                            Card(
+                                shape = RoundedCornerShape(12.dp),
+                                colors = CardDefaults.cardColors(containerColor = Color.White),
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .border(1.dp, Color(0xFFE0E0E2), RoundedCornerShape(12.dp))
+                            ) {
+                                Text(
+                                    "No active room reservations found.",
+                                    modifier = Modifier.padding(16.dp),
+                                    fontSize = 14.sp,
+                                    color = Color.Gray
+                                )
+                            }
+                        }
+                    } else {
+                        items(userBookings) { booking ->
+                            Card(
+                                shape = RoundedCornerShape(12.dp),
+                                colors = CardDefaults.cardColors(containerColor = Color.White),
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .border(1.dp, Color(0xFFE0E0E2), RoundedCornerShape(12.dp))
+                            ) {
+                                Column(modifier = Modifier.padding(16.dp)) {
+                                    Row(
+                                        modifier = Modifier.fillMaxWidth(),
+                                        horizontalArrangement = Arrangement.SpaceBetween,
+                                        verticalAlignment = Alignment.CenterVertically
+                                    ) {
+                                        Text(
+                                            "Room ID: ${booking.roomID}",
+                                            fontWeight = FontWeight.Bold,
+                                            fontSize = 16.sp,
+                                            color = Color(0xFF1A1A1A)
+                                        )
+                                        Box(
+                                            modifier = Modifier
+                                                .background(Color(0xFFE3F2FD), RoundedCornerShape(6.dp))
+                                                .padding(horizontal = 8.dp, vertical = 4.dp)
+                                        ) {
+                                            Text(
+                                                booking.status.uppercase(),
+                                                fontSize = 10.sp,
+                                                fontWeight = FontWeight.Bold,
+                                                color = Color(0xFF1E88E5)
+                                            )
+                                        }
+                                    }
+                                    Spacer(modifier = Modifier.height(6.dp))
+                                    Text(
+                                        "Scheduled: ${booking.timeDate}",
+                                        fontSize = 13.sp,
+                                        color = Color.Gray
+                                    )
+                                }
                             }
                         }
                     }
-                }
 
-                // Swap Section Header
-                item {
-                    Spacer(modifier = Modifier.height(8.dp))
-                    Text("Active Swap Requests", fontWeight = FontWeight.Bold, fontSize = 18.sp)
-                }
-
-                if (loadingSwaps) {
-                    item { CircularProgressIndicator(modifier = Modifier.padding(16.dp)) }
-                } else if (swapList.isEmpty()) {
+                    // Swap Section Header
                     item {
-                        Card(modifier = Modifier.fillMaxWidth()) {
-                            Text("No pending swap requests.", modifier = Modifier.padding(16.dp), fontSize = 14.sp)
-                        }
+                        Spacer(modifier = Modifier.height(4.dp))
+                        Text(
+                            "Active Swap Requests",
+                            fontSize = 14.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = Color.Gray
+                        )
                     }
-                } else {
-                    items(swapList) { swap ->
-                        Card(modifier = Modifier.fillMaxWidth()) {
-                            Column(modifier = Modifier.padding(12.dp)) {
-                                if (swap.requesterUserId == currentUserEmail) {
-                                    Text("📤 Outgoing Swap Request", fontWeight = FontWeight.SemiBold, color = MaterialTheme.colorScheme.secondary)
-                                    Text("Offered trade to user: ${swap.targetUserId}", fontSize = 14.sp)
-                                    Text("Time: ${swap.timeDate}", fontSize = 12.sp)
-                                    Text("Status: Pending", color = MaterialTheme.colorScheme.primary, fontSize = 12.sp)
-                                } else {
-                                    Text("📥 Incoming Swap Request", fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
-                                    Text("User ${swap.requesterUserId} wants your slot.", fontSize = 14.sp)
-                                    Text("Time: ${swap.timeDate}", fontSize = 12.sp)
-                                    Spacer(modifier = Modifier.height(8.dp))
-                                    
-                                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                                        Button(
-                                            onClick = {
-                                                firebaseRepo.respondToSwap(swap.swapID, true) { _, message ->
-                                                    Toast.makeText(context, message, Toast.LENGTH_LONG).show()
-                                                }
-                                            },
-                                            modifier = Modifier.weight(1f)
-                                        ) {
-                                            Text("Accept")
-                                        }
-                                        OutlinedButton(
-                                            onClick = {
-                                                firebaseRepo.respondToSwap(swap.swapID, false) { _, message ->
-                                                    Toast.makeText(context, message, Toast.LENGTH_LONG).show()
-                                                }
-                                            },
-                                            modifier = Modifier.weight(1f)
-                                        ) {
-                                            Text("Reject")
+
+                    if (loadingSwaps) {
+                        item {
+                            Box(
+                                modifier = Modifier.fillMaxWidth().padding(16.dp),
+                                contentAlignment = Alignment.Center
+                            ) {
+                                CircularProgressIndicator(color = Color(0xFFD32F2F))
+                            }
+                        }
+                    } else if (swapList.isEmpty()) {
+                        item {
+                            Card(
+                                shape = RoundedCornerShape(12.dp),
+                                colors = CardDefaults.cardColors(containerColor = Color.White),
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .border(1.dp, Color(0xFFE0E0E2), RoundedCornerShape(12.dp))
+                            ) {
+                                Text(
+                                    "No pending swap requests.",
+                                    modifier = Modifier.padding(16.dp),
+                                    fontSize = 14.sp,
+                                    color = Color.Gray
+                                )
+                            }
+                        }
+                    } else {
+                        items(swapList) { swap ->
+                            Card(
+                                shape = RoundedCornerShape(12.dp),
+                                colors = CardDefaults.cardColors(containerColor = Color.White),
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .border(1.dp, Color(0xFFE0E0E2), RoundedCornerShape(12.dp))
+                            ) {
+                                Column(modifier = Modifier.padding(16.dp)) {
+                                    if (swap.requesterUserId == currentUserEmail) {
+                                        Text(
+                                            "📤 Outgoing Swap Request",
+                                            fontWeight = FontWeight.Bold,
+                                            fontSize = 15.sp,
+                                            color = Color(0xFFD32F2F)
+                                        )
+                                        Spacer(modifier = Modifier.height(4.dp))
+                                        Text(
+                                            "Offered trade to user: ${swap.targetUserId}",
+                                            fontSize = 13.sp,
+                                            color = Color(0xFF1A1A1A)
+                                        )
+                                        Text(
+                                            "Time: ${swap.timeDate}",
+                                            fontSize = 12.sp,
+                                            color = Color.Gray
+                                        )
+                                        Text(
+                                            "Status: Pending",
+                                            fontSize = 12.sp,
+                                            fontWeight = FontWeight.SemiBold,
+                                            color = Color(0xFF1E88E5)
+                                        )
+                                    } else {
+                                        Text(
+                                            "📥 Incoming Swap Request",
+                                            fontWeight = FontWeight.Bold,
+                                            fontSize = 15.sp,
+                                            color = Color(0xFF1E88E5)
+                                        )
+                                        Spacer(modifier = Modifier.height(4.dp))
+                                        Text(
+                                            "User ${swap.requesterUserId} wants your slot.",
+                                            fontSize = 13.sp,
+                                            color = Color(0xFF1A1A1A)
+                                        )
+                                        Text(
+                                            "Time: ${swap.timeDate}",
+                                            fontSize = 12.sp,
+                                            color = Color.Gray
+                                        )
+                                        Spacer(modifier = Modifier.height(10.dp))
+                                        
+                                        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                                            Button(
+                                                onClick = {
+                                                    firebaseRepo.respondToSwap(swap.swapID, true) { _, message ->
+                                                        Toast.makeText(context, message, Toast.LENGTH_LONG).show()
+                                                    }
+                                                },
+                                                shape = RoundedCornerShape(8.dp),
+                                                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFD32F2F)),
+                                                modifier = Modifier.weight(1f).height(38.dp)
+                                            ) {
+                                                Text("Accept", fontSize = 12.sp)
+                                            }
+                                            OutlinedButton(
+                                                onClick = {
+                                                    firebaseRepo.respondToSwap(swap.swapID, false) { _, message ->
+                                                        Toast.makeText(context, message, Toast.LENGTH_LONG).show()
+                                                    }
+                                                },
+                                                shape = RoundedCornerShape(8.dp),
+                                                colors = ButtonDefaults.outlinedButtonColors(contentColor = Color(0xFF1A1A1A)),
+                                                modifier = Modifier.weight(1f).height(38.dp).border(1.dp, Color(0xFFE0E0E2), RoundedCornerShape(8.dp))
+                                            ) {
+                                                Text("Reject", fontSize = 12.sp)
+                                            }
                                         }
                                     }
                                 }
                             }
                         }
                     }
-                }
 
-                // --- 4. ADMINISTRATIVE STACK ---
-                if (userRole == "lecturer" || userRole == "staff") {
-                    item {
-                        Spacer(modifier = Modifier.height(8.dp))
-                        HorizontalDivider(thickness = 2.dp)
-                        Text(
-                            text = "Lecturers and Staff Administration Tools",
-                            color = MaterialTheme.colorScheme.error,
-                            fontSize = 14.sp,
-                            fontWeight = FontWeight.Bold,
-                            modifier = Modifier.padding(vertical = 8.dp)
-                        )
-                    }
+                    // --- 4. ADMINISTRATIVE STACK ---
+                    if (userRole == "lecturer" || userRole == "staff") {
+                        item {
+                            Spacer(modifier = Modifier.height(8.dp))
+                            HorizontalDivider(thickness = 1.dp, color = Color(0xFFE0E0E2))
+                            Text(
+                                text = "Lecturers and Staff Administration Tools",
+                                color = Color(0xFFD32F2F),
+                                fontSize = 13.sp,
+                                fontWeight = FontWeight.Bold,
+                                modifier = Modifier.padding(vertical = 8.dp)
+                            )
+                        }
 
-                    item {
-                        Card(modifier = Modifier.fillMaxWidth()) {
-                            Column(modifier = Modifier.padding(12.dp)) {
-                                Text("Room Reports", fontWeight = FontWeight.Bold)
-                                Text("Inspect overall room analytics and statistics.", fontSize = 14.sp)
+                        item {
+                            Card(
+                                shape = RoundedCornerShape(12.dp),
+                                colors = CardDefaults.cardColors(containerColor = Color.White),
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .border(1.dp, Color(0xFFE0E0E2), RoundedCornerShape(12.dp))
+                            ) {
+                                Column(modifier = Modifier.padding(16.dp)) {
+                                    Text("Room Reports", fontWeight = FontWeight.Bold, fontSize = 15.sp)
+                                    Spacer(modifier = Modifier.height(4.dp))
+                                    Text("Inspect overall room analytics and statistics.", fontSize = 13.sp, color = Color.Gray)
+                                }
                             }
                         }
-                    }
-                    item {
-                        Card(modifier = Modifier.fillMaxWidth()) {
-                            Column(modifier = Modifier.padding(12.dp)) {
-                                Text("Room Logs", fontWeight = FontWeight.Bold)
-                                Text("View historical system audit logs.", fontSize = 14.sp)
+                        item {
+                            Card(
+                                shape = RoundedCornerShape(12.dp),
+                                colors = CardDefaults.cardColors(containerColor = Color.White),
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .border(1.dp, Color(0xFFE0E0E2), RoundedCornerShape(12.dp))
+                            ) {
+                                Column(modifier = Modifier.padding(16.dp)) {
+                                    Text("Room Logs", fontWeight = FontWeight.Bold, fontSize = 15.sp)
+                                    Spacer(modifier = Modifier.height(4.dp))
+                                    Text("View historical system audit logs.", fontSize = 13.sp, color = Color.Gray)
+                                }
                             }
                         }
                     }
