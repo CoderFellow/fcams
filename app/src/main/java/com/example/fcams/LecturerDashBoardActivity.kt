@@ -2,38 +2,45 @@ package com.example.fcams
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.DateRange
+import androidx.compose.material.icons.filled.ExitToApp
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Menu
+import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.google.firebase.auth.FirebaseAuth
+import kotlinx.coroutines.launch
 
 class LecturerDashboardActivity : ComponentActivity() {
-/*
-The dashboard screen presented to logged-in lecturers, focusing on room control and schedule inspection.
-*/
-    // Initialize the repository to communicate with the Firebase backend
-    // An instance of the repository to fetch room data from Firebase.
     private val firebaseRepo = FirebaseRepository()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-    /*
-    Sets the Compose content view when the activity initializes.
-    */
-
-        // Set up the Jetpack Compose UI layout for this activity
         super.onCreate(savedInstanceState)
         setContent {
             Surface(
                 modifier = Modifier.fillMaxSize(),
-                color = MaterialTheme.colorScheme.background
+                color = Color(0xFFF8F9FA)
             ) {
                 LecturerDashboardScreen()
             }
@@ -42,63 +49,169 @@ The dashboard screen presented to logged-in lecturers, focusing on room control 
 
     @Composable
     fun LecturerDashboardScreen() {
-    /*
-    The main UI layout function that fetches rooms from Firebase and renders them in a scrollable list.
-    */
-
         val context = LocalContext.current
-
-        // Create a reactive state list to store fetched rooms and automatically update UI
+        val currentUserEmail = FirebaseAuth.getInstance().currentUser?.email ?: "lecturer@fcams.edu"
+        
+        val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
+        val coroutineScope = rememberCoroutineScope()
         var roomList by remember { mutableStateOf<List<Room>>(emptyList()) }
 
-        // Fetch room data from Firebase when the screen first loads
         LaunchedEffect(Unit) {
             firebaseRepo.getRooms { rooms ->
                 roomList = rooms
             }
         }
 
-        // Main layout container holding headers and the room list
-        Column(modifier = Modifier.fillMaxSize().padding(16.dp)) {
-            Text("Lecturer Portal - Room Control", fontSize = 24.sp, fontWeight = FontWeight.Bold)
-            Spacer(modifier = Modifier.height(8.dp))
-            Text("Manage rooms and inspect advanced metadata.", fontSize = 14.sp, color = MaterialTheme.colorScheme.secondary)
-            Spacer(modifier = Modifier.height(16.dp))
-
-            // Efficient vertical scrolling list for displaying rooms
-            LazyColumn {
-                items(roomList) { room ->
-                    
-                    // Card container for each individual room item
-                    Card(
+        ModalNavigationDrawer(
+            drawerState = drawerState,
+            drawerContent = {
+                ModalDrawerSheet(
+                    drawerContainerColor = Color.White,
+                    modifier = Modifier.width(300.dp).fillMaxHeight()
+                ) {
+                    // --- DRAWER HEADER BRANDING ---
+                    Column(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(vertical = 8.dp),
-                        elevation = CardDefaults.cardElevation(4.dp)
+                            .background(Color(0xFF1A1A1A))
+                            .padding(24.dp)
                     ) {
-                        Column(modifier = Modifier.padding(16.dp)) {
+                        Image(
+                            painter = painterResource(id = R.drawable.ic_lab4o_logo),
+                            contentDescription = "Menu Logo",
+                            contentScale = ContentScale.Fit,
+                            modifier = Modifier.size(54.dp)
+                        )
+                        Spacer(modifier = Modifier.height(12.dp))
+                        Text("LAB 4O WORKSPACE", fontSize = 12.sp, fontWeight = FontWeight.Bold, color = Color(0xFFD32F2F))
+                        Text(currentUserEmail, fontSize = 14.sp, color = Color.LightGray, fontWeight = FontWeight.Medium)
+                    }
 
-                            // Display room name, ID, capacity, and status metadata unique to lecturers
-                            Text(text = room.roomName, fontSize = 18.sp, fontWeight = FontWeight.SemiBold)
-                            Text(text = "Room ID: ${room.roomID} | Capacity: ${room.capacity}")
-                            Text(text = "Status: Active / Monitored", fontSize = 12.sp, color = MaterialTheme.colorScheme.primary)
-                            
-                            Spacer(modifier = Modifier.height(12.dp))
+                    Spacer(modifier = Modifier.height(12.dp))
 
-                            // Button to view the room schedule calendar directly
-                            Button(
-                                onClick = {
+                    // --- NAVIGATION LINKS ---
+                    NavigationDrawerItem(
+                        icon = { Icon(Icons.Default.Home, contentDescription = null) },
+                        label = { Text("Workspace Hub", color = Color(0xFF1A1A1A)) },
+                        selected = false,
+                        onClick = {
+                            coroutineScope.launch {
+                                drawerState.close()
+                                val intent = Intent(context, UserDashboardActivity::class.java)
+                                context.startActivity(intent)
+                            }
+                        },
+                        modifier = Modifier.padding(horizontal = 12.dp, vertical = 4.dp)
+                    )
 
-                                    // Bundle Room ID and Name into an Intent and launch RoomScheduleActivity
-                                    val intent = Intent(context, RoomScheduleActivity::class.java).apply {
-                                        putExtra("ROOM_ID", room.roomID)
-                                        putExtra("ROOM_NAME", room.roomName)
-                                    }
-                                    context.startActivity(intent)
-                                },
-                                modifier = Modifier.fillMaxWidth()
-                            ) {
-                                Text("View Room Schedule & Bookings")
+                    NavigationDrawerItem(
+                        icon = { Icon(Icons.Default.DateRange, contentDescription = null, tint = Color(0xFFD32F2F)) },
+                        label = { Text("Portal - Room Control", fontWeight = FontWeight.Bold, color = Color(0xFF1A1A1A)) },
+                        selected = true,
+                        onClick = { coroutineScope.launch { drawerState.close() } },
+                        modifier = Modifier.padding(horizontal = 12.dp, vertical = 4.dp),
+                        colors = NavigationDrawerItemDefaults.colors(selectedContainerColor = Color(0xFFF8F9FA))
+                    )
+
+                    Spacer(modifier = Modifier.weight(1f))
+                    HorizontalDivider(color = Color(0xFFE0E0E2), thickness = 1.dp)
+
+                    // --- SYSTEM FOOTER LINKS ---
+                    NavigationDrawerItem(
+                        icon = { Icon(Icons.Default.Settings, contentDescription = null) },
+                        label = { Text("App Settings", color = Color(0xFF1A1A1A)) },
+                        selected = false,
+                        onClick = {
+                            coroutineScope.launch {
+                                drawerState.close()
+                                Toast.makeText(context, "Opening Settings Portal...", Toast.LENGTH_SHORT).show()
+                            }
+                        },
+                        modifier = Modifier.padding(horizontal = 12.dp, vertical = 4.dp)
+                    )
+
+                    NavigationDrawerItem(
+                        icon = { Icon(Icons.Default.ExitToApp, contentDescription = null, tint = Color(0xFFD32F2F)) },
+                        label = { Text("Log Out Session", color = Color(0xFFD32F2F), fontWeight = FontWeight.SemiBold) },
+                        selected = false,
+                        onClick = {
+                            coroutineScope.launch {
+                                drawerState.close()
+                                FirebaseAuth.getInstance().signOut()
+                                val intent = Intent(context, MainActivity::class.java).apply {
+                                    flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                                }
+                                context.startActivity(intent)
+                            }
+                        },
+                        modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp)
+                    )
+                }
+            }
+        ) {
+            Column(modifier = Modifier.fillMaxSize().padding(horizontal = 20.dp, vertical = 16.dp)) {
+                
+                // --- TOP ACTION HEADER BAR ---
+                Row(
+                    modifier = Modifier.fillMaxWidth().padding(bottom = 16.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    IconButton(onClick = { coroutineScope.launch { drawerState.open() } }) {
+                        Icon(Icons.Default.Menu, contentDescription = "Open Drawer", tint = Color(0xFF1A1A1A), modifier = Modifier.size(28.dp))
+                    }
+
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                        Text("LAB 4O WORKSPACE", fontSize = 11.sp, fontWeight = FontWeight.Bold, color = Color(0xFFD32F2F))
+                        Text("Room Control", fontSize = 20.sp, fontWeight = FontWeight.ExtraBold, color = Color(0xFF1A1A1A))
+                    }
+
+                    Card(
+                        shape = RoundedCornerShape(10.dp),
+                        modifier = Modifier.size(40.dp),
+                        colors = CardDefaults.cardColors(containerColor = Color.White)
+                    ) {
+                        Image(
+                            painter = painterResource(id = R.drawable.ic_lab4o_logo),
+                            contentDescription = "Branding",
+                            contentScale = ContentScale.Crop,
+                            modifier = Modifier.fillMaxSize()
+                        )
+                    }
+                }
+
+                // --- LECTURER ROOM GRID ---
+                LazyColumn(
+                    verticalArrangement = Arrangement.spacedBy(14.dp),
+                    modifier = Modifier.fillMaxSize()
+                ) {
+                    items(roomList) { room ->
+                        Card(
+                            shape = RoundedCornerShape(12.dp),
+                            colors = CardDefaults.cardColors(containerColor = Color.White),
+                            modifier = Modifier.fillMaxWidth().border(1.dp, Color(0xFFE0E0E2), RoundedCornerShape(12.dp))
+                        ) {
+                            Column(modifier = Modifier.padding(16.dp)) {
+                                Text(text = room.roomName, fontSize = 16.sp, fontWeight = FontWeight.Bold, color = Color(0xFF1A1A1A))
+                                Text(text = "Room ID: ${room.roomID} | Capacity: ${room.capacity}", fontSize = 13.sp, color = Color.Gray)
+                                Text(text = "Status: Active / Monitored", fontSize = 12.sp, color = Color(0xFFD32F2F), fontWeight = FontWeight.Medium)
+                                
+                                Spacer(modifier = Modifier.height(14.dp))
+                                
+                                Button(
+                                    onClick = {
+                                        val intent = Intent(context, RoomScheduleActivity::class.java).apply {
+                                            putExtra("ROOM_ID", room.roomID)
+                                            putExtra("ROOM_NAME", room.roomName)
+                                        }
+                                        context.startActivity(intent)
+                                    },
+                                    shape = RoundedCornerShape(6.dp),
+                                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF1A1A1A)),
+                                    modifier = Modifier.fillMaxWidth().height(40.dp)
+                                ) {
+                                    Text("View Room Schedule & Bookings", fontSize = 13.sp, fontWeight = FontWeight.Bold)
+                                }
                             }
                         }
                     }
