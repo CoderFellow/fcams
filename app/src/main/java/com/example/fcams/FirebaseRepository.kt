@@ -26,7 +26,6 @@ class FirebaseRepository {
             .get()
             .addOnSuccessListener { documents ->
                 if (!documents.isEmpty) {
-                    // Grab the role from the matching document
                     val role = documents.documents[0].getString("role")
                     onRoleFetched(role)
                 } else {
@@ -54,12 +53,10 @@ class FirebaseRepository {
     /* Checks for scheduling conflicts first, and if clear, generates a unique booking 
     ID and saves a new booking object with a "Pending" status to the roomBookings collection.*/
     fun bookRoom(roomID: String, userId: String, timeDate: String, onResult: (Boolean, String) -> Unit) {
-        // 1. Check for conflicts first
         checkBookingConflict(roomID, timeDate) { hasConflict ->
             if (hasConflict) {
                 onResult(false, "This room is already booked for this date and time!")
             } else {
-                // 2. Create the booking object
                 val bookingID = db.collection("roomBookings").document().id
                 val newBooking = RoomBooking(
                     bookingID = bookingID,
@@ -69,7 +66,6 @@ class FirebaseRepository {
                     status = "Pending"
                 )
     
-                // 3. Save to Firestore
                 db.collection("roomBookings")
                     .document(bookingID)
                     .set(newBooking)
@@ -83,45 +79,36 @@ class FirebaseRepository {
         }
     }
 
-    /*Queries active bookings in the roomBookings collection for a specific 
-    room and time slot to prevent double-booking.*/
+    /*Queries active bookings in the roomBookings collection for a specific room and time slot to prevent double-booking.*/
     fun checkBookingConflict(roomID: String, selectedDateTime: String, onResult: (Boolean) -> Unit) {
-        /*
-        queries active bookings for a specific room and checks if the chosen slot overlaps
-        
-        */
-    db.collection("roomBookings")
-        .whereEqualTo("roomID", roomID)
-        .whereEqualTo("timeDate", selectedDateTime)
-        .get()
-        .addOnSuccessListener { documents ->
-            // If documents.isEmpty() is true, no conflict exists!
-            val hasConflict = !documents.isEmpty
-            onResult(hasConflict)
-        }
-        .addOnFailureListener {
-            // Default to safe side or handle error
-            onResult(true) 
-        }
+        db.collection("roomBookings")
+            .whereEqualTo("roomID", roomID)
+            .whereEqualTo("timeDate", selectedDateTime)
+            .get()
+            .addOnSuccessListener { documents ->
+                val hasConflict = !documents.isEmpty
+                onResult(hasConflict)
+            }
+            .addOnFailureListener {
+                onResult(true) 
+            }
     }
 
-    /*Fetches all bookings tied to a specific room ID or retrieves 
-    bookings belonging to the currently signed-in user.*/
+    /*Fetches all bookings tied to a specific room ID or retrieves bookings belonging to the currently signed-in user.*/
     fun getBookingsForRoom(roomID: String, onResult: (List<RoomBooking>) -> Unit) {
-    db.collection("roomBookings")
-        .whereEqualTo("roomID", roomID)
-        .get()
-        .addOnSuccessListener { documents ->
-            val bookings = documents.toObjects(RoomBooking::class.java)
-            onResult(bookings)
-        }
-        .addOnFailureListener {
-            onResult(emptyList())
-        }
+        db.collection("roomBookings")
+            .whereEqualTo("roomID", roomID)
+            .get()
+            .addOnSuccessListener { documents ->
+                val bookings = documents.toObjects(RoomBooking::class.java)
+                onResult(bookings)
+            }
+            .addOnFailureListener {
+                onResult(emptyList())
+            }
     }
 
-
-    // 1. Request a Swap with time verification
+    // Request a Swap with time verification
     fun requestSwap(requesterBookingID: String, targetBookingID: String, onResult: (Boolean, String) -> Unit) {
         db.collection("roomBookings").document(requesterBookingID).get().addOnSuccessListener { reqDoc ->
             db.collection("roomBookings").document(targetBookingID).get().addOnSuccessListener { targetDoc ->
@@ -129,7 +116,6 @@ class FirebaseRepository {
                 val targetBooking = targetDoc.toObject(RoomBooking::class.java)
     
                 if (reqBooking != null && targetBooking != null) {
-                    // Check if both rooms are set at the same date and time
                     if (reqBooking.timeDate == targetBooking.timeDate) {
                         val swapID = db.collection("roomSwaps").document().id
                         val swapRequest = RoomSwapRequest(
@@ -155,7 +141,22 @@ class FirebaseRepository {
         }
     }
 
-    // 2. Accept or Reject Swap
+    // Fetch pending swaps (Clean single copy)
+    fun getSwapRequests(userId: String, onResult: (List<RoomSwapRequest>) -> Unit) {
+        db.collection("roomSwaps")
+            .whereEqualTo("status", "Pending")
+            .get()
+            .addOnSuccessListener { documents ->
+                val allSwaps = documents.toObjects(RoomSwapRequest::class.java)
+                val filteredSwaps = allSwaps.filter { it.requesterUserId == userId || it.targetUserId == userId }
+                onResult(filteredSwaps)
+            }
+            .addOnFailureListener {
+                onResult(emptyList())
+            }
+    }
+
+    // Accept or Reject Swap with completed batch updates
     fun respondToSwap(swapID: String, accept: Boolean, onResult: (Boolean, String) -> Unit) {
         val swapRef = db.collection("roomSwaps").document(swapID)
 
@@ -163,22 +164,33 @@ class FirebaseRepository {
             val swap = doc.toObject(RoomSwapRequest::class.java)
             if (swap != null && swap.status == "Pending") {
                 if (accept) {
-                    // "Set Swap": Swap the roomIDs between the two bookings
                     val reqBookingRef = db.collection("roomBookings").document(swap.requesterBookingID)
                     val targetBookingRef = db.collection("roomBookings").document(swap.targetBookingID)
 
-                    db.runBatch { batch ->
-                        // Fetch current room IDs via temporary batch logic or direct reads
-                        // For simplicity, swap their room assignments:
-                        // (In production, you'd swap the roomID fields of the two documents)
-                    }.addOnSuccessListener {
-                        swapRef.update("status", "Accepted")
-                        onResult(true, "Swap accepted and set!")
+                    reqBookingRef.get().addOnSuccessListener { reqDoc ->
+                        targetBookingRef.get().addOnSuccessListener { targetDoc ->
+                            val reqBooking = reqDoc.toObject(RoomBooking::class.java)
+                            val targetBooking = targetDoc.toObject(RoomBooking::class.java)
+
+                            if (reqBooking != null && targetBooking != null) {
+                                db.runBatch { batch ->
+                                    batch.update(reqBookingRef, "userId", targetBooking.userId)
+                                    batch.update(targetBookingRef, "userId", reqBooking.userId)
+                                    batch.update(swapRef, "status", "Accepted")
+                                }.addOnSuccessListener {
+                                    onResult(true, "Swap accepted! Room assignments successfully traded.")
+                                }.addOnFailureListener { e ->
+                                    onResult(false, "Transaction failed: ${e.localizedMessage}")
+                                }
+                            } else {
+                                onResult(false, "Original booking documents data corrupted.")
+                            }
+                        }
                     }
                 } else {
-                    // "Reject Swap"
                     swapRef.update("status", "Rejected")
-                    onResult(true, "Swap request rejected.")
+                        .addOnSuccessListener { onResult(true, "Swap request rejected.") }
+                        .addOnFailureListener { e -> onResult(false, "Failed to reject: ${e.localizedMessage}") }
                 }
             } else {
                 onResult(false, "Invalid or already handled swap request.")
@@ -186,8 +198,7 @@ class FirebaseRepository {
         }
     }
     
-    /*Fetches all bookings tied to a specific room ID or retrieves 
-    bookings belonging to the currently signed-in user.*/
+    /*Fetches all bookings belonging to the currently signed-in user.*/
     fun getUserBookings(onResult: (List<RoomBooking>) -> Unit) {
         val currentEmail = auth.currentUser?.email 
         if (currentEmail == null) {
@@ -196,11 +207,10 @@ class FirebaseRepository {
         }
     
         db.collection("roomBookings")
-            .whereEqualTo("userId", currentEmail) // Match by email if that's what you saved
+            .whereEqualTo("userId", currentEmail)
             .get()
             .addOnSuccessListener { documents ->
                 val allBookings = documents.toObjects(RoomBooking::class.java)
-                android.util.Log.d("FIREBASE_DEBUG", "Successfully parsed ${allBookings.size} bookings for user.")
                 onResult(allBookings)
             }
             .addOnFailureListener {

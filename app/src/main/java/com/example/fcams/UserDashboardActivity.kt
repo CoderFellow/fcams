@@ -17,9 +17,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.google.firebase.auth.FirebaseAuth
 
-class UserDashboardActivity: ComponentActivity() {
+class UserDashboardActivity : ComponentActivity() {
     /*
-    The unified user profile and dashboard page mapped to real Firebase data.
+    The unified user profile and dashboard page.
     */
     private val firebaseRepo = FirebaseRepository()
 
@@ -40,34 +40,41 @@ class UserDashboardActivity: ComponentActivity() {
         val context = LocalContext.current
         val currentUserEmail = FirebaseAuth.getInstance().currentUser?.email ?: "User"
 
-        // State variables for data tracking
-        var userRole by remember { mutableStateOf("student") }
+        // State variables explicitly using 'by remember' to maintain scope throughout sub-blocks
+        var userRole by remember { mutableStateOf("student") } 
         var userBookings by remember { mutableStateOf<List<RoomBooking>>(emptyList()) }
+        var swapList by remember { mutableStateOf<List<RoomSwapRequest>>(emptyList()) }
+        
         var loadingBookings by remember { mutableStateOf(true) }
+        var loadingSwaps by remember { mutableStateOf(true) }
 
-        // Fetch data when the screen loads
+        // Fetch data when screen loads
         LaunchedEffect(Unit) {
             firebaseRepo.fetchUserRole(currentUserEmail) { role ->
                 if (role != null) userRole = role
             }
-            
             firebaseRepo.getUserBookings { bookings ->
                 userBookings = bookings
                 loadingBookings = false
             }
+            firebaseRepo.getSwapRequests(currentUserEmail) { swaps ->
+                swapList = swaps
+                loadingSwaps = false
+            }
         }
 
+        // Main layout container
         Column(modifier = Modifier.fillMaxSize().padding(16.dp)) {
             
-            // --- 1. TOP HEADER: Profile Picture & Settings ---
+            // --- 1. TOP HEADER ---
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                Button(onClick = { Toast.makeText(context, "Profile clicked", Toast.LENGTH_SHORT).show() }) {
+                Button(onClick = { Toast.makeText(context, "Profile", Toast.LENGTH_SHORT).show() }) {
                     Text("Profile")
                 }
-                Button(onClick = { Toast.makeText(context, "Settings clicked", Toast.LENGTH_SHORT).show() }) {
+                Button(onClick = { Toast.makeText(context, "Settings", Toast.LENGTH_SHORT).show() }) {
                     Text("⚙")
                 }
             }
@@ -79,7 +86,6 @@ class UserDashboardActivity: ComponentActivity() {
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                // Book Room hooks into StudentDashboard to leverage existing booking flows
                 Button(
                     onClick = { 
                         val intent = Intent(context, StudentDashboardActivity::class.java)
@@ -89,18 +95,10 @@ class UserDashboardActivity: ComponentActivity() {
                 ) {
                     Text("Book Room", fontSize = 12.sp)
                 }
-                
-                Button(
-                    onClick = { Toast.makeText(context, "Scrolling to Bookings Below", Toast.LENGTH_SHORT).show() }, 
-                    modifier = Modifier.weight(1f)
-                ) {
+                Button(onClick = { Toast.makeText(context, "Showing reservations below", Toast.LENGTH_SHORT).show() }, modifier = Modifier.weight(1f)) {
                     Text("Booked Rooms", fontSize = 12.sp)
                 }
-                
-                Button(
-                    onClick = { Toast.makeText(context, "Scrolling to Swaps Below", Toast.LENGTH_SHORT).show() }, 
-                    modifier = Modifier.weight(1f)
-                ) {
+                Button(onClick = { Toast.makeText(context, "Showing swaps below", Toast.LENGTH_SHORT).show() }, modifier = Modifier.weight(1f)) {
                     Text("Swap Requests", fontSize = 12.sp)
                 }
             }
@@ -108,14 +106,16 @@ class UserDashboardActivity: ComponentActivity() {
             Spacer(modifier = Modifier.height(16.dp))
 
             // --- 3. SCROLLABLE CONTENT SECTIONS ---
-            LazyColumn(modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+            LazyColumn(
+                modifier = Modifier.fillMaxSize(),
+                verticalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
                 
-                // Booked Rooms Section Title
+                // Reservations Section Header
                 item {
                     Text("Your Active Reservations", fontWeight = FontWeight.Bold, fontSize = 18.sp)
                 }
 
-                // Render active user bookings dynamically from database
                 if (loadingBookings) {
                     item { CircularProgressIndicator(modifier = Modifier.padding(16.dp)) }
                 } else if (userBookings.isEmpty()) {
@@ -136,22 +136,64 @@ class UserDashboardActivity: ComponentActivity() {
                     }
                 }
 
-                // Swap Requests Section Title
+                // Swap Section Header
                 item {
                     Spacer(modifier = Modifier.height(8.dp))
-                    Text("Swap Requests (Incoming / Outgoing)", fontWeight = FontWeight.Bold, fontSize = 18.sp)
+                    Text("Active Swap Requests", fontWeight = FontWeight.Bold, fontSize = 18.sp)
                 }
 
-                // Swap Requests Section Container Placeholder
-                item {
-                    Card(modifier = Modifier.fillMaxWidth()) {
-                        Column(modifier = Modifier.padding(12.dp)) {
-                            Text("To manage swaps, select a room via the 'Book Room' menu to open its master schedule, then tap an occupied slot to trade.", fontSize = 14.sp)
+                if (loadingSwaps) {
+                    item { CircularProgressIndicator(modifier = Modifier.padding(16.dp)) }
+                } else if (swapList.isEmpty()) {
+                    item {
+                        Card(modifier = Modifier.fillMaxWidth()) {
+                            Text("No pending swap requests.", modifier = Modifier.padding(16.dp), fontSize = 14.sp)
+                        }
+                    }
+                } else {
+                    items(swapList) { swap ->
+                        Card(modifier = Modifier.fillMaxWidth()) {
+                            Column(modifier = Modifier.padding(12.dp)) {
+                                if (swap.requesterUserId == currentUserEmail) {
+                                    Text("📤 Outgoing Swap Request", fontWeight = FontWeight.SemiBold, color = MaterialTheme.colorScheme.secondary)
+                                    Text("Offered trade to user: ${swap.targetUserId}", fontSize = 14.sp)
+                                    Text("Time: ${swap.timeDate}", fontSize = 12.sp)
+                                    Text("Status: Pending", color = MaterialTheme.colorScheme.primary, fontSize = 12.sp)
+                                } else {
+                                    Text("📥 Incoming Swap Request", fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
+                                    Text("User ${swap.requesterUserId} wants your slot.", fontSize = 14.sp)
+                                    Text("Time: ${swap.timeDate}", fontSize = 12.sp)
+                                    Spacer(modifier = Modifier.height(8.dp))
+                                    
+                                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                                        Button(
+                                            onClick = {
+                                                firebaseRepo.respondToSwap(swap.swapID, true) { _, message ->
+                                                    Toast.makeText(context, message, Toast.LENGTH_LONG).show()
+                                                }
+                                            },
+                                            modifier = Modifier.weight(1f)
+                                        ) {
+                                            Text("Accept")
+                                        }
+                                        OutlinedButton(
+                                            onClick = {
+                                                firebaseRepo.respondToSwap(swap.swapID, false) { _, message ->
+                                                    Toast.makeText(context, message, Toast.LENGTH_LONG).show()
+                                                }
+                                            },
+                                            modifier = Modifier.weight(1f)
+                                        ) {
+                                            Text("Reject")
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
 
-                // --- 4. LECTURERS & STAFF ONLY SECTION ---
+                // --- 4. ADMINISTRATIVE STACK ---
                 if (userRole == "lecturer" || userRole == "staff") {
                     item {
                         Spacer(modifier = Modifier.height(8.dp))
@@ -173,7 +215,6 @@ class UserDashboardActivity: ComponentActivity() {
                             }
                         }
                     }
-
                     item {
                         Card(modifier = Modifier.fillMaxWidth()) {
                             Column(modifier = Modifier.padding(12.dp)) {
