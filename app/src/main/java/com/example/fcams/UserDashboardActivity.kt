@@ -12,6 +12,12 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.DateRange
+import androidx.compose.material.icons.filled.ExitToApp
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Menu
+import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -24,6 +30,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.google.firebase.auth.FirebaseAuth
+import kotlinx.coroutines.launch
 
 class UserDashboardActivity : ComponentActivity() {
     private val firebaseRepo = FirebaseRepository()
@@ -44,6 +51,10 @@ class UserDashboardActivity : ComponentActivity() {
     fun UserDashboardScreen() {
         val context = LocalContext.current
         val currentUserEmail = FirebaseAuth.getInstance().currentUser?.email ?: "student@fcams.edu"
+        
+        // Scope variables managing sliding panel drawer animations natively
+        val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
+        val coroutineScope = rememberCoroutineScope()
 
         // State variables explicitly using 'by remember' to maintain scope throughout sub-blocks
         var userRole by remember { mutableStateOf("student") } 
@@ -68,40 +79,149 @@ class UserDashboardActivity : ComponentActivity() {
             }
         }
 
-        // Core Brand Layout Wrapper Stack
-        Box(modifier = Modifier.fillMaxSize()) {
-            
-            // Functional Content Overlay
-            Column(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(horizontal = 20.dp, vertical = 16.dp)
-            ) {
+        // 🌟 FULL NAVIGATION SLIDING PANEL DRAWER SHEET INTEGRATION 🌟
+        ModalNavigationDrawer(
+            drawerState = drawerState,
+            drawerContent = {
+                ModalDrawerSheet(
+                    drawerContainerColor = Color.White,
+                    modifier = Modifier.width(300.dp).fillMaxHeight()
+                ) {
+                    // --- DRAWER HEADER BRANDING ---
+                    Column(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .background(Color(0xFF1A1A1A))
+                            .padding(24.dp)
+                    ) {
+                        Image(
+                            painter = painterResource(id = R.drawable.ic_lab4o_logo),
+                            contentDescription = "Menu Branding Logo",
+                            contentScale = ContentScale.Fit,
+                            modifier = Modifier.size(54.dp)
+                        )
+                        Spacer(modifier = Modifier.height(12.dp))
+                        Text(
+                            text = "LAB 4O WORKSPACE",
+                            fontSize = 12.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = Color(0xFFD32F2F)
+                        )
+                        Text(
+                            text = currentUserEmail,
+                            fontSize = 14.sp,
+                            color = Color.LightGray,
+                            fontWeight = FontWeight.Medium
+                        )
+                    }
+
+                    Spacer(modifier = Modifier.height(12.dp))
+
+                    // --- NAVIGATION LINKS SEGMENT ---
+                    NavigationDrawerItem(
+                        icon = { Icon(Icons.Default.Home, contentDescription = null, tint = Color(0xFFD32F2F)) },
+                        label = { Text("Workspace Hub", fontWeight = FontWeight.Bold, color = Color(0xFF1A1A1A)) },
+                        selected = true,
+                        onClick = { coroutineScope.launch { drawerState.close() } },
+                        modifier = Modifier.padding(horizontal = 12.dp, vertical = 4.dp),
+                        colors = NavigationDrawerItemDefaults.colors(selectedContainerColor = Color(0xFFF8F9FA))
+                    )
+
+                    NavigationDrawerItem(
+                        icon = { Icon(Icons.Default.DateRange, contentDescription = null) },
+                        label = { Text("Book Available Space", color = Color(0xFF1A1A1A)) },
+                        selected = false,
+                        onClick = {
+                            coroutineScope.launch {
+                                drawerState.close()
+                                // Dynamic routing layer determining view permissions instantly
+                                val targetActivity = if (userRole == "lecturer" || userRole == "staff") {
+                                    LecturerDashboardActivity::class.java
+                                } else {
+                                    StudentDashboardActivity::class.java
+                                }
+                                val intent = Intent(context, targetActivity)
+                                context.startActivity(intent)
+                            }
+                        },
+                        modifier = Modifier.padding(horizontal = 12.dp, vertical = 4.dp)
+                    )
+
+                    // Pushes remaining settings links cleanly down to the bottom footer base
+                    Spacer(modifier = Modifier.weight(1f))
+                    HorizontalDivider(color = Color(0xFFE0E0E2), thickness = 1.dp)
+
+                    // --- SYSTEM FOOTER LINKS ---
+                    NavigationDrawerItem(
+                        icon = { Icon(Icons.Default.Settings, contentDescription = null) },
+                        label = { Text("App Settings", color = Color(0xFF1A1A1A)) },
+                        selected = false,
+                        onClick = {
+                            coroutineScope.launch {
+                                drawerState.close()
+                                Toast.makeText(context, "Opening Settings Portal...", Toast.LENGTH_SHORT).show()
+                            }
+                        },
+                        modifier = Modifier.padding(horizontal = 12.dp, vertical = 4.dp)
+                    )
+
+                    NavigationDrawerItem(
+                        icon = { Icon(Icons.Default.ExitToApp, contentDescription = null, tint = Color(0xFFD32F2F)) },
+                        label = { Text("Log Out Session", color = Color(0xFFD32F2F), fontWeight = FontWeight.SemiBold) },
+                        selected = false,
+                        onClick = {
+                            coroutineScope.launch {
+                                drawerState.close()
+                                FirebaseAuth.getInstance().signOut()
+                                val intent = Intent(context, MainActivity::class.java).apply {
+                                    flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                                }
+                                context.startActivity(intent)
+                            }
+                        },
+                        modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp)
+                    )
+                }
+            }
+        ) {
+            // Main Core Page Container Overlay Screen Layout
+            Column(modifier = Modifier.fillMaxSize().padding(horizontal = 20.dp, vertical = 16.dp)) {
                 
-                // --- 1. PREMIUM BRAND HEADLINE BAR ---
+                // --- 1. PREMIUM HEADER ACTION BAR BAR ---
                 Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(bottom = 16.dp),
+                    modifier = Modifier.fillMaxWidth().padding(bottom = 16.dp),
                     horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Column {
+                    // Left Interaction Point: Drawer Trigger Button
+                    IconButton(
+                        onClick = { coroutineScope.launch { drawerState.open() } }
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.Menu,
+                            contentDescription = "Open Drawer Panel",
+                            tint = Color(0xFF1A1A1A),
+                            modifier = Modifier.size(28.dp)
+                        )
+                    }
+
+                    // Centered Segment Context Branding
+                    Column(modifier = Modifier.weight(1f), horizontalAlignment = Alignment.CenterHorizontally) {
                         Text(
-                            text = "LAB 4O workspace",
-                            fontSize = 12.sp,
+                            text = "LAB 4O WORKSPACE",
+                            fontSize = 11.sp,
                             fontWeight = FontWeight.Bold,
-                            color = Color(0xFFD32F2F) // Crimson signature
+                            color = Color(0xFFD32F2F)
                         )
                         Text(
-                            text = "User Dashboard",
-                            fontSize = 22.sp,
+                            text = "Workspace Hub",
+                            fontSize = 20.sp,
                             fontWeight = FontWeight.ExtraBold,
                             color = Color(0xFF1A1A1A)
                         )
                     }
-                    
-                    // 🌟 BRANDED REPLACEMENT: Swapped out the letter "U" for your real logo image
+
+                    // Interactive Profile Node
                     Card(
                         shape = RoundedCornerShape(10.dp),
                         modifier = Modifier.size(40.dp),
@@ -109,34 +229,34 @@ class UserDashboardActivity : ComponentActivity() {
                     ) {
                         Image(
                             painter = painterResource(id = R.drawable.ic_lab4o_logo),
-                            contentDescription = "Profile Branding",
+                            contentDescription = "Profile Icon Node",
                             contentScale = ContentScale.Crop,
                             modifier = Modifier.fillMaxSize()
                         )
                     }
                 }
 
-                // --- 2. HIGH EFFICIENCY QUICK ACTION ACTIONS ---
+                // --- 2. HIGH EFFICIENCY QUICK ACTION LINKS (Converted to flat indicators) ---
                 Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(bottom = 20.dp),
+                    modifier = Modifier.fillMaxWidth().padding(bottom = 20.dp),
                     horizontalArrangement = Arrangement.spacedBy(10.dp)
                 ) {
                     Button(
-                        onClick = { 
-                            val intent = Intent(context, StudentDashboardActivity::class.java)
+                        onClick = {
+                            val targetActivity = if (userRole == "lecturer" || userRole == "staff") {
+                                LecturerDashboardActivity::class.java
+                            } else {
+                                StudentDashboardActivity::class.java
+                            }
+                            val intent = Intent(context, targetActivity)
                             context.startActivity(intent)
                         },
                         shape = RoundedCornerShape(8.dp),
                         colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFD32F2F)),
-                        modifier = Modifier
-                            .weight(1f)
-                            .height(46.dp)
+                        modifier = Modifier.weight(1f).height(46.dp)
                     ) {
                         Text("Book Room", fontSize = 13.sp, fontWeight = FontWeight.Bold)
                     }
-                    
                     OutlinedButton(
                         onClick = { Toast.makeText(context, "Showing active reservations below", Toast.LENGTH_SHORT).show() },
                         shape = RoundedCornerShape(8.dp),
@@ -150,28 +270,18 @@ class UserDashboardActivity : ComponentActivity() {
                     }
                 }
 
-                // --- 3. SCROLLABLE CONTENT SECTIONS ---
+                // --- 3. SCROLLABLE LIVE TRACKING FEED ---
                 LazyColumn(
-                    verticalArrangement = Arrangement.spacedBy(12.dp),
-                    modifier = Modifier.fillMaxSize()
+                    modifier = Modifier.fillMaxSize(),
+                    verticalArrangement = Arrangement.spacedBy(14.dp)
                 ) {
-                    
-                    // Reservations Section Header
+                    // Active Reservations Sub-Heading
                     item {
-                        Text(
-                            "Your Active Reservations",
-                            fontSize = 14.sp,
-                            fontWeight = FontWeight.Bold,
-                            color = Color.Gray
-                        )
+                        Text("Your Active Reservations", fontWeight = FontWeight.Bold, fontSize = 14.sp, color = Color.Gray)
                     }
-
                     if (loadingBookings) {
                         item {
-                            Box(
-                                modifier = Modifier.fillMaxWidth().padding(16.dp),
-                                contentAlignment = Alignment.Center
-                            ) {
+                            Box(modifier = Modifier.fillMaxWidth().padding(16.dp), contentAlignment = Alignment.Center) {
                                 CircularProgressIndicator(color = Color(0xFFD32F2F))
                             }
                         }
@@ -180,16 +290,9 @@ class UserDashboardActivity : ComponentActivity() {
                             Card(
                                 shape = RoundedCornerShape(12.dp),
                                 colors = CardDefaults.cardColors(containerColor = Color.White),
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .border(1.dp, Color(0xFFE0E0E2), RoundedCornerShape(12.dp))
+                                modifier = Modifier.fillMaxWidth().border(1.dp, Color(0xFFE0E0E2), RoundedCornerShape(12.dp))
                             ) {
-                                Text(
-                                    "No active room reservations found.",
-                                    modifier = Modifier.padding(16.dp),
-                                    fontSize = 14.sp,
-                                    color = Color.Gray
-                                )
+                                Text("No active room reservations found.", modifier = Modifier.padding(16.dp), fontSize = 14.sp, color = Color.Gray)
                             }
                         }
                     } else {
@@ -197,9 +300,7 @@ class UserDashboardActivity : ComponentActivity() {
                             Card(
                                 shape = RoundedCornerShape(12.dp),
                                 colors = CardDefaults.cardColors(containerColor = Color.White),
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .border(1.dp, Color(0xFFE0E0E2), RoundedCornerShape(12.dp))
+                                modifier = Modifier.fillMaxWidth().border(1.dp, Color(0xFFE0E0E2), RoundedCornerShape(12.dp))
                             ) {
                                 Column(modifier = Modifier.padding(16.dp)) {
                                     Text("Room ID: ${booking.roomID}", fontWeight = FontWeight.Bold, fontSize = 16.sp, color = Color(0xFF1A1A1A))
@@ -212,18 +313,14 @@ class UserDashboardActivity : ComponentActivity() {
                         }
                     }
 
-                    // Swap Management Section Header
+                    // Swap Management Sub-Heading
                     item {
                         Spacer(modifier = Modifier.height(6.dp))
                         Text("Active Swap Requests", fontWeight = FontWeight.Bold, fontSize = 14.sp, color = Color.Gray)
                     }
-
                     if (loadingSwaps) {
                         item {
-                            Box(
-                                modifier = Modifier.fillMaxWidth().padding(16.dp),
-                                contentAlignment = Alignment.Center
-                            ) {
+                            Box(modifier = Modifier.fillMaxWidth().padding(16.dp), contentAlignment = Alignment.Center) {
                                 CircularProgressIndicator(color = Color(0xFFD32F2F))
                             }
                         }
@@ -232,9 +329,7 @@ class UserDashboardActivity : ComponentActivity() {
                             Card(
                                 shape = RoundedCornerShape(12.dp),
                                 colors = CardDefaults.cardColors(containerColor = Color.White),
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .border(1.dp, Color(0xFFE0E0E2), RoundedCornerShape(12.dp))
+                                modifier = Modifier.fillMaxWidth().border(1.dp, Color(0xFFE0E0E2), RoundedCornerShape(12.dp))
                             ) {
                                 Text("No pending swap requests.", modifier = Modifier.padding(16.dp), fontSize = 14.sp, color = Color.Gray)
                             }
@@ -244,9 +339,7 @@ class UserDashboardActivity : ComponentActivity() {
                             Card(
                                 shape = RoundedCornerShape(12.dp),
                                 colors = CardDefaults.cardColors(containerColor = Color.White),
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .border(1.dp, Color(0xFFE0E0E2), RoundedCornerShape(12.dp))
+                                modifier = Modifier.fillMaxWidth().border(1.dp, Color(0xFFE0E0E2), RoundedCornerShape(12.dp))
                             ) {
                                 Column(modifier = Modifier.padding(16.dp)) {
                                     if (swap.requesterUserId == currentUserEmail) {
