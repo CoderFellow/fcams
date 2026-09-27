@@ -1,126 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://android.com"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://android.com"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8F9FA">
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#F8F9FA"
+    android:padding="24dp">
 
-    <!-- Background Watermark Logo -->
-    <ImageView
-        android:id="@+id/ivBackgroundLogo"
-        android:layout_width="280dp"
-        android:layout_height="280dp"
-        android:layout_centerInParent="true"
-        android:alpha="0.03" 
-        android:contentDescription="Lab 4o Watermark"
-        android:scaleType="fitCenter"
-        android:src="@drawable/ic_lab4o_logo" />
-
-    <!-- Main Container -->
-    <LinearLayout
+    <!-- Framework Stack Layer managing background branding values -->
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:orientation="vertical"
-        android:padding="24dp">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="LAB 4O WORKSPACE"
-            android:textColor="#D32F2F"
-            android:textSize="11sp"
-            android:textStyle="bold"
-            android:layout_gravity="center_horizontal"
-            android:letterSpacing="0.1"/>
+        <!-- 🌟 BRAND INTEGRATION: Faint Wallpaper Watermark Background -->
+        <ImageView
+            android:id="@+id/ivBackgroundLogo"
+            android:layout_width="280dp"
+            android:layout_height="280dp"
+            android:layout_gravity="center"
+            android:alpha="0.03" 
+            android:contentDescription="Lab 4o Watermark"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_lab4o_logo" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sign In to FCAMS"
-            android:textColor="#1A1A1A"
-            android:textSize="26sp"
-            android:textStyle="bold"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="24dp"/>
-
-        <!-- Input Box Card -->
-        <androidx.cardview.widget.CardView
+        <!-- Foreground Interactive Elements Entry Stack -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="2dp"
-            app:cardBackgroundColor="#FFFFFF"
-            android:layout_marginBottom="16dp">
+            android:orientation="vertical">
 
-            <LinearLayout
+            <!-- Subtitle Brand Signature -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LAB 4O WORKSPACE"
+                android:textColor="#D32F2F"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal"
+                android:letterSpacing="0.1"/>
+
+            <!-- Main Heading Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign In to FCAMS"
+                android:textColor="#1A1A1A"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Elegant Input Form Box Container Card -->
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="20dp">
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="#FFFFFF"
+                android:layout_marginBottom="20dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="EMAIL ADDRESS"
-                    android:textColor="#A0A0A0"
-                    android:textSize="10sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="4dp"/>
+                    android:orientation="vertical"
+                    android:padding="20dp">
 
-                <EditText
-                    android:id="@+id/etEmail"
-                    android:layout_width="match_parent"
-                    android:layout_height="44dp"
-                    android:background="@null"
-                    android:hint="name@fcams.edu"
-                    android:inputType="textEmailAddress"
-                    android:textColor="#1A1A1A"
-                    android:textColorHint="#CCCCCC"
-                    android:textSize="15sp"
-                    android:layout_marginBottom="16dp"/>
+                    <!-- Email Field -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="EMAIL ADDRESS"
+                        android:textColor="#A0A0A0"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="4dp"/>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#E0E0E2"
-                    android:layout_marginBottom="16dp"/>
+                    <EditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:background="@null"
+                        android:hint="Email (e.g. student1@fcams.edu)"
+                        android:inputType="textEmailAddress"
+                        android:textColor="#1A1A1A"
+                        android:textColorHint="#CCCCCC"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="16dp"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="SECURITY PASSWORD"
-                    android:textColor="#A0A0A0"
-                    android:textSize="10sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="4dp"/>
+                    <!-- Clean Horizontal Grid Border Divider Separator -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#E0E0E2"
+                        android:layout_marginBottom="16dp"/>
 
-                <EditText
-                    android:id="@+id/etPassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="44dp"
-                    android:background="@null"
-                    android:hint="••••••••"
-                    android:inputType="textPassword"
-                    android:textColor="#1A1A1A"
-                    android:textColorHint="#CCCCCC"
-                    android:textSize="15sp"/>
+                    <!-- Password Field -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SECURITY PASSWORD"
+                        android:textColor="#A0A0A0"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="4dp"/>
 
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                    <EditText
+                        android:id="@+id/etPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:background="@null"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:textColor="#1A1A1A"
+                        android:textColorHint="#CCCCCC"
+                        android:textSize="15sp"/>
 
-        <!-- Crimson Login Action Trigger Button -->
-        <Button
-            android:id="@+id/btnLogin"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:backgroundTint="#D32F2F"
-            android:text="Sign In"
-            android:textColor="#FFFFFF"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            app:cornerRadius="8dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-    </LinearLayout>
-</RelativeLayout>
+            <!-- Solid Crimson Interactive Login Trigger Block Button -->
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:backgroundTint="#D32F2F"
+                android:text="Login &amp; Check Role"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:cornerRadius="8dp" />
+
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>
