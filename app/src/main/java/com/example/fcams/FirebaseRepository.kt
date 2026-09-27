@@ -217,4 +217,21 @@ class FirebaseRepository {
                 onResult(emptyList())
             }
     }
+
+        // 🌟 ADDED: Fetches ALL open swap market options posted by other users that are available to trade
+    fun getAllAvailableSwaps(currentUserId: String, onResult: (List<RoomSwapRequest>) -> Unit) {
+        db.collection("roomSwaps")
+            .whereEqualTo("status", "Pending")
+            .get()
+            .addOnSuccessListener { documents ->
+                val allSwaps = documents.toObjects(RoomSwapRequest::class.java)
+                // Filter out your own requests so you only see options available from other users
+                val publicMarketSwaps = allSwaps.filter { it.requesterUserId != currentUserId }
+                onResult(publicMarketSwaps)
+            }
+            .addOnFailureListener {
+                onResult(emptyList())
+            }
+    }
+
 }

@@ -1,36 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#F8F9FA"
     android:padding="16dp">
 
+    <!--  1. TITLE MODULE  -->
     <TextView
         android:id="@+id/tvScheduleRoomTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Room Schedule"
-        android:textSize="20sp"
+        android:textColor="#1A1A1A"
+        android:textSize="22sp"
         android:textStyle="bold"
         android:layout_marginBottom="12dp"/>
 
+    <!--  2. THE CALENDAR SURFACE  -->
     <CalendarView
         android:id="@+id/calendarView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#FFFFFF"
         android:layout_marginBottom="16dp"/>
 
+    <!--  3. ON-THE-GO FILTER SEGMENT  -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Occupied Slots on Selected Date:"
+        android:text="FILTER WORKSPACE MATRIX"
+        android:textColor="#A0A0A0"
+        android:textSize="10sp"
         android:textStyle="bold"
-        android:textSize="16sp"
+        android:layout_marginBottom="6dp"
+        android:letterSpacing="0.05"/>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:layout_marginBottom="16dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnFilterAll"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:text="All Month"
+                android:backgroundTint="#D32F2F"
+                android:textColor="#FFFFFF"
+                android:layout_marginEnd="8dp"/>
+
+            <Button
+                android:id="@+id/btnFilterMorning"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:text="Morning Slots"
+                android:backgroundTint="#E0E0E2"
+                android:textColor="#1A1A1A"
+                android:layout_marginEnd="8dp"/>
+
+            <Button
+                android:id="@+id/btnFilterAfternoon"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:text="Afternoon Slots"
+                android:backgroundTint="#E0E0E2"
+                android:textColor="#1A1A1A"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!--  4. STREAMING CONTENT FEED  -->
+    <TextView
+        android:id="@+id/tvStreamHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="30-Day Master Schedule Stream"
+        android:textColor="#A0A0A0"
+        android:textSize="12sp"
+        android:textStyle="bold"
         android:layout_marginBottom="8dp"/>
 
     <ListView
         android:id="@+id/lvBookedSlots"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#FFFFFF"
+        android:divider="#E9ECEF"
+        android:dividerHeight="1dp"/>
 
 </LinearLayout>
