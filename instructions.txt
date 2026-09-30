@@ -2,9 +2,21 @@ git add . <--- to add all files to commit
 git add [filename.fileExtentions] [anyMoreFiles] <---- for individual files
 git commit -m "Your Comment Here!" <--- to commit changes to your local repository.
 git push <---- to push changes from your local repository to github remote.
+
 git log <---- to track the number of commits on you local machine
 
 ----
 
 if you wish to ignore pushing somefiles, add them to .gitignore:
 
+---
+
+adb kill-server <--- kills server
+adb disconnect <--- disconnects all attached devices
+adb start-server <--- starts server
+adb devices <--- to check the mobile device attached.
+
+---
+
+runapp <--- to run applciatoin
+run_logcat <--- to check the running of the app to catch successes and errors.

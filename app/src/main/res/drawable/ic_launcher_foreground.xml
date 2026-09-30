@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    
+    <!-- Building/Room icon -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M34,28 L74,28 A4,4 0 0,1 78,32 L78,80 A4,4 0 0,1 74,84 L34,84 A4,4 0 0,1 30,80 L30,32 A4,4 0 0,1 34,28 Z"/>
+    
+    <!-- Windows -->
+    <path
+        android:fillColor="#1A237E"
+        android:pathData="M38,36 L48,36 L48,46 L38,46 Z"/>
+    <path
+        android:fillColor="#1A237E"
+        android:pathData="M54,36 L64,36 L64,46 L54,46 Z"/>
+    <path
+        android:fillColor="#1A237E"
+        android:pathData="M38,52 L48,52 L48,62 L38,62 Z"/>
+    <path
+        android:fillColor="#1A237E"
+        android:pathData="M54,52 L64,52 L64,62 L54,62 Z"/>
+    
+    <!-- Door -->
+    <path
+        android:fillColor="#1A237E"
+        android:pathData="M48,70 L60,70 L60,84 L48,84 Z"/>
+    
+    <!-- Calendar accent -->
+    <path
+        android:fillColor="#FFD54F"
+        android:pathData="M72,64 L84,64 L84,76 L72,76 Z"/>
+</vector>
