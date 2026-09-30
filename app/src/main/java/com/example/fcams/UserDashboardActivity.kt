@@ -32,9 +32,18 @@ import androidx.compose.ui.unit.sp
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.launch
 
+/**
+ * Activity representing the central user dashboard interface, adapting content
+ * dynamically based on authentication role and managing active reservations and swaps.
+ */
 class UserDashboardActivity : ComponentActivity() {
     private val firebaseRepo = FirebaseRepository()
 
+    /**
+     * Initializes the activity, setting up the Jetpack Compose surface content.
+     *
+     * @param savedInstanceState Bundle containing the activity's previously saved state, if any.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -47,6 +56,10 @@ class UserDashboardActivity : ComponentActivity() {
         }
     }
 
+    /**
+     * Composable function rendering the main user dashboard layout, including navigation drawer,
+     * reservation cards, live swap processing feeds, and staff administrative tools.
+     */
     @Composable
     fun UserDashboardScreen() {
         val context = LocalContext.current
@@ -79,7 +92,7 @@ class UserDashboardActivity : ComponentActivity() {
             }
         }
 
-        // 🌟 FULL NAVIGATION SLIDING PANEL DRAWER SHEET INTEGRATION 🌟
+        // FULL NAVIGATION SLIDING PANEL DRAWER SHEET INTEGRATION 
         ModalNavigationDrawer(
             drawerState = drawerState,
             drawerContent = {

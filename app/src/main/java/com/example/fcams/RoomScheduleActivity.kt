@@ -12,10 +12,19 @@ import java.util.Locale
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 
+/**
+ * Activity responsible for displaying a room's schedule, managing calendar-based date selections,
+ * and facilitating room swap requests between users.
+ */
 class RoomScheduleActivity : AppCompatActivity() {
     private val firebaseRepo = FirebaseRepository()
     private val calendarFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
 
+    /**
+     * Initializes the activity, sets up views, reads intent data, and configures calendar date listeners.
+     *
+     * @param savedInstanceState Bundle containing the activity's previously saved state, if any.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_room_schedule)
@@ -45,6 +54,14 @@ class RoomScheduleActivity : AppCompatActivity() {
         fetchAndDisplayBookings(roomID, selectedDateStr, lvBookedSlots)
     }
 
+    /**
+     * Fetches and displays booked slots for a specific room and date, handling item click actions
+     * to trigger room swap requests.
+     *
+     * @param roomID The ID of the target room.
+     * @param date The date string to filter bookings by.
+     * @param listView The ListView used to render the booked slots.
+     */
     private fun fetchAndDisplayBookings(roomID: String, date: String, listView: ListView) {
         val currentUserId = FirebaseAuth.getInstance().currentUser?.email ?: ""
 
@@ -70,7 +87,6 @@ class RoomScheduleActivity : AppCompatActivity() {
                 }
 
                 // Call the repository function cleanly
-                // Call the repository function cleanly
                 firebaseRepo.getUserBookings { myBookings ->
                     if (myBookings.isEmpty()) {
                         runOnUiThread {
@@ -88,7 +104,7 @@ class RoomScheduleActivity : AppCompatActivity() {
                             .setTitle("Request Room Swap\nTarget Slot: ${targetBooking.timeDate}\n\nSelect one of your bookings to offer:")
                             .setItems(myBookingStrings) { _, whichIndex ->
                                 val chosenMyBooking = myBookings[whichIndex]
-                    
+    
                                 firebaseRepo.requestSwap(chosenMyBooking.bookingID, targetBooking.bookingID) { success, message ->
                                     Toast.makeText(this, message, Toast.LENGTH_LONG).show()
                                 }

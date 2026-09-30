@@ -10,10 +10,18 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
+/**
+ * Main entry activity responsible for user authentication and login routing.
+ */
 class MainActivity : AppCompatActivity() {
 
     private val firebaseRepo = FirebaseRepository()
 
+    /**
+     * Initializes the activity, sets up edge-to-edge window insets, and handles login interactions.
+     *
+     * @param savedInstanceState Bundle containing the activity's previously saved state, if any.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -60,4 +68,3 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
-    

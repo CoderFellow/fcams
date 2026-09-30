@@ -32,9 +32,18 @@ import androidx.compose.ui.unit.sp
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.launch
 
+/**
+ * Activity representing the student dashboard interface, providing navigation,
+ * room availability listing, and quick booking access.
+ */
 class StudentDashboardActivity : ComponentActivity() {
     private val firebaseRepo = FirebaseRepository()
 
+    /**
+     * Initializes the activity, setting up the Jetpack Compose surface content.
+     *
+     * @param savedInstanceState Bundle containing the activity's previously saved state, if any.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -47,6 +56,10 @@ class StudentDashboardActivity : ComponentActivity() {
         }
     }
 
+    /**
+     * Composable function rendering the main student dashboard layout, including the navigation drawer
+     * and room availability listing.
+     */
     @Composable
     fun StudentDashboardScreen() {
         val context = LocalContext.current

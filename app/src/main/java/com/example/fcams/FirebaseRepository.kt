@@ -3,11 +3,25 @@ package com.example.fcams
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
+/**
+ * Repository class responsible for handling Firebase Authentication and Firestore database operations
+ * for user management, room bookings, and room swap requests.
+ */
 class FirebaseRepository {
+
+    /** Firebase Authentication instance. */
     val auth: FirebaseAuth = FirebaseAuth.getInstance()
+
+    /** Firebase Firestore database instance. */
     val db: FirebaseFirestore = FirebaseFirestore.getInstance()
 
-    /* Authenticates users using their email address and password, returning success or error messages via a callback.*/
+    /**
+     * Authenticates users using their email address and password.
+     *
+     * @param email The user's email address.
+     * @param pass The user's password.
+     * @param onResult Callback returning a Boolean success flag and an optional error message on failure.
+     */
     fun loginUser(email: String, pass: String, onResult: (Boolean, String?) -> Unit) {
         auth.signInWithEmailAndPassword(email, pass)
             .addOnCompleteListener { task ->
@@ -19,7 +33,12 @@ class FirebaseRepository {
             }
     }
 
-    /* Queries the Firestore users collection by email to retrieve a user's role (e.g., admin, student, staff).*/
+    /**
+     * Queries the Firestore users collection by email to retrieve a user's role.
+     *
+     * @param email The email address to look up.
+     * @param onRoleFetched Callback returning the user's role string (e.g., admin, student, staff), or null if not found.
+     */
     fun fetchUserRole(email: String, onRoleFetched: (String?) -> Unit) {
         db.collection("users")
             .whereEqualTo("email", email)
@@ -37,7 +56,11 @@ class FirebaseRepository {
             }
     }
 
-    /* Retrieves a list of all available rooms from the rooms collection.*/
+    /**
+     * Retrieves a list of all available rooms from the rooms collection.
+     *
+     * @param onRoomsFetched Callback returning a list of [Room] objects.
+     */
     fun getRooms(onRoomsFetched: (List<Room>) -> Unit) {
         db.collection("rooms")
             .get()
@@ -50,8 +73,15 @@ class FirebaseRepository {
             }
     }
 
-    /* Checks for scheduling conflicts first, and if clear, generates a unique booking 
-    ID and saves a new booking object with a "Pending" status to the roomBookings collection.*/
+    /**
+     * Checks for scheduling conflicts first, and if clear, generates a unique booking ID 
+     * and saves a new booking object with a "Pending" status to the roomBookings collection.
+     *
+     * @param roomID The ID of the room being booked.
+     * @param userId The ID of the user making the booking.
+     * @param timeDate The date and time string for the booking.
+     * @param onResult Callback returning a Boolean success flag and a status message.
+     */
     fun bookRoom(roomID: String, userId: String, timeDate: String, onResult: (Boolean, String) -> Unit) {
         checkBookingConflict(roomID, timeDate) { hasConflict ->
             if (hasConflict) {
@@ -79,7 +109,13 @@ class FirebaseRepository {
         }
     }
 
-    /*Queries active bookings in the roomBookings collection for a specific room and time slot to prevent double-booking.*/
+    /**
+     * Queries active bookings in the roomBookings collection for a specific room and time slot to prevent double-booking.
+     *
+     * @param roomID The ID of the room to check.
+     * @param selectedDateTime The target date and time string.
+     * @param onResult Callback returning true if a conflict exists, or false otherwise.
+     */
     fun checkBookingConflict(roomID: String, selectedDateTime: String, onResult: (Boolean) -> Unit) {
         db.collection("roomBookings")
             .whereEqualTo("roomID", roomID)
@@ -94,7 +130,12 @@ class FirebaseRepository {
             }
     }
 
-    /*Fetches all bookings tied to a specific room ID or retrieves bookings belonging to the currently signed-in user.*/
+    /**
+     * Fetches all bookings tied to a specific room ID.
+     *
+     * @param roomID The target room ID.
+     * @param onResult Callback returning a list of [RoomBooking] objects.
+     */
     fun getBookingsForRoom(roomID: String, onResult: (List<RoomBooking>) -> Unit) {
         db.collection("roomBookings")
             .whereEqualTo("roomID", roomID)
@@ -108,7 +149,13 @@ class FirebaseRepository {
             }
     }
 
-    // Request a Swap with time verification
+    /**
+     * Requests a room swap with time verification.
+     *
+     * @param requesterBookingID The booking ID of the user requesting the swap.
+     * @param targetBookingID The target booking ID to swap with.
+     * @param onResult Callback returning a Boolean success flag and a status message.
+     */
     fun requestSwap(requesterBookingID: String, targetBookingID: String, onResult: (Boolean, String) -> Unit) {
         db.collection("roomBookings").document(requesterBookingID).get().addOnSuccessListener { reqDoc ->
             db.collection("roomBookings").document(targetBookingID).get().addOnSuccessListener { targetDoc ->
@@ -141,7 +188,12 @@ class FirebaseRepository {
         }
     }
 
-    // Fetch pending swaps (Clean single copy)
+    /**
+     * Fetches pending swap requests involving the user.
+     *
+     * @param userId The ID of the user.
+     * @param onResult Callback returning a list of pending [RoomSwapRequest] objects.
+     */
     fun getSwapRequests(userId: String, onResult: (List<RoomSwapRequest>) -> Unit) {
         db.collection("roomSwaps")
             .whereEqualTo("status", "Pending")
@@ -156,7 +208,13 @@ class FirebaseRepository {
             }
     }
 
-    // Accept or Reject Swap with completed batch updates
+    /**
+     * Accepts or rejects a swap request with completed batch updates.
+     *
+     * @param swapID The ID of the swap request.
+     * @param accept Flag indicating whether to accept (true) or reject (false) the swap.
+     * @param onResult Callback returning a Boolean success flag and a status message.
+     */
     fun respondToSwap(swapID: String, accept: Boolean, onResult: (Boolean, String) -> Unit) {
         val swapRef = db.collection("roomSwaps").document(swapID)
 
@@ -198,7 +256,11 @@ class FirebaseRepository {
         }
     }
     
-    /*Fetches all bookings belonging to the currently signed-in user.*/
+    /**
+     * Fetches all bookings belonging to the currently signed-in user.
+     *
+     * @param onResult Callback returning a list of [RoomBooking] objects.
+     */
     fun getUserBookings(onResult: (List<RoomBooking>) -> Unit) {
         val currentEmail = auth.currentUser?.email 
         if (currentEmail == null) {
@@ -218,14 +280,18 @@ class FirebaseRepository {
             }
     }
 
-        // 🌟 ADDED: Fetches ALL open swap market options posted by other users that are available to trade
+    /**
+     * Fetches ALL open swap market options posted by other users that are available to trade.
+     *
+     * @param currentUserId The ID of the current user to filter out their own requests.
+     * @param onResult Callback returning a list of available [RoomSwapRequest] objects.
+     */
     fun getAllAvailableSwaps(currentUserId: String, onResult: (List<RoomSwapRequest>) -> Unit) {
         db.collection("roomSwaps")
             .whereEqualTo("status", "Pending")
             .get()
             .addOnSuccessListener { documents ->
                 val allSwaps = documents.toObjects(RoomSwapRequest::class.java)
-                // Filter out your own requests so you only see options available from other users
                 val publicMarketSwaps = allSwaps.filter { it.requesterUserId != currentUserId }
                 onResult(publicMarketSwaps)
             }
@@ -233,5 +299,4 @@ class FirebaseRepository {
                 onResult(emptyList())
             }
     }
-
 }

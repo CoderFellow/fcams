@@ -7,18 +7,21 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 
+/**
+ * Activity responsible for letting users input a date and time to reserve a specific room.
+ */
 class SetBookingActivity : AppCompatActivity() {
-/*
-An activity responsible for letting users input a date and time to reserve a specific room.
-*/
+
     // Connects to Firebase to handle conflict checks and save the booking.
     private val firebaseRepo = FirebaseRepository()
 
+    /**
+     * Initializes the layout, extracts the room ID from the intent, 
+     * grabs the user's email, and sets up the confirmation button click listener.
+     *
+     * @param savedInstanceState Bundle containing the activity's previously saved state, if any.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
-    /*
-    Initializes the layout, extracts the room ID from the intent, 
-    grabs the user's email, and sets up the confirmation button click listener.
-    */
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_set_booking)
 
@@ -55,7 +58,7 @@ An activity responsible for letting users input a date and time to reserve a spe
                 }
             } 
             // Prompt user if the date/time field is left blank
-            else{
+            else {
                 Toast.makeText(this, "Please enter a valid date and time", Toast.LENGTH_SHORT).show()
             }
         }
